@@ -22,6 +22,8 @@ type
     procedure CreateFromFile(filename:string);
     function Encode(itxt:ansistring):ansistring; virtual;
     function Decode(txt:ansistring):ansistring; virtual;
+    constructor Init();
+    destructor Destroy();
 
     private
     cp1enc : TFPStringHashTable;  //all "main" characters to codes
@@ -40,6 +42,21 @@ type
 
 
 implementation
+
+constructor TCodeTable.Init();
+  begin
+  Title:='Untitled';
+  Description:='No description provided'
+  end;
+
+destructor TCodeTable.Destroy();
+begin
+ cp1enc.free;
+ cp2enc.free;
+ cp1dec.free;
+ cp2dec.free;
+
+end;
 
 procedure TCodeTable.CreateFromStrings(strs:tStringList);
  const
