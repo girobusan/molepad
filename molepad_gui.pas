@@ -12,11 +12,12 @@ uses
   OTPcipher, ucheckerboard,
   ComCtrls, StdCtrls, ExtCtrls;
 var
-  curtable:TCodeTable;
-  tables : array[1..2] of TCodeTable;
-  trs    : TResourceStream;
-  tsl    : TStringList;
-  i:integer;
+  curtable : ^TCodeTable;
+  tables   : array[1..2] of TCodeTable;
+  trs      : TResourceStream;
+  tsl      : TStringList;
+  i        : integer;
+
 
 type
 
@@ -37,6 +38,7 @@ type
     memo_key: TMemo;
     menu_file: TMenuItem;
     menuitem_exit: TMenuItem;
+    loadCodetabeFile: TOpenDialog;
     tabs_main: TPageControl;
     tabs_result: TPageControl;
     panel_key_top: TPanel;
@@ -75,19 +77,25 @@ implementation
 { Tmp_main }
 
 procedure Tmp_main.codetable_chooserChange(Sender: TObject);
+var
+  filename:string;
 begin
+  if Assigned(curTable) then Dispose(curTable);
+  New(curTable);
   if codetable_chooser.ItemIndex=length(tables) then
   begin
-    //codetable_description.caption:='No description';
-    ShowMessage('Not implemented');
-    //exit;
+    if loadCodetabeFile.Execute then
+    begin
+    filename := loadCodetabeFile.Filename;
+    curTable^.createFromFile(filename);
+    end;
   end
   else
-  begin
-  curTable:=tables[codetable_chooser.ItemIndex + 1];
-  codetable_description.caption:=curTable.description;
-  end;
-  codetable_chooser.text:= curTable.Title //FIX
+    begin
+    curTable^:=tables[codetable_chooser.ItemIndex + 1];
+    end;
+  codetable_description.caption:=curTable^.description;
+  codetable_chooser.text:= curTable^.Title //FIX
 end;
 
 procedure Tmp_main.cb_encrypt_by_substractionChange(Sender: TObject);

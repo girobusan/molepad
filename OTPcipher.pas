@@ -19,18 +19,19 @@ var
    encypherByAddition:boolean=True;
 
 procedure changeEncryptionType();
-begin
+   begin
        encypherByAddition:=not encypherByAddition
    end;
+
 procedure setEncByAdditionTo(val:boolean);
-begin
+  begin
    encypherByAddition:=val;
-end;
+  end;
 
 function isEncByAddition():boolean;
-begin
+  begin
    isEncByAddition:= encypherByAddition
-end;
+  end;
 
 
 function mod10minus(a:integer;b:integer):integer; //a-b: it was harder, than expected

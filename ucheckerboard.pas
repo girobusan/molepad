@@ -1,7 +1,10 @@
 unit ucheckerboard;
 
 {$mode objfpc}{$H+}
-{_codepage utf8}
+(*
+Implementation of "staggered checkerboard" (нерегулярная таблица) encoding.
+
+*)
 
 interface
 

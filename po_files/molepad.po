@@ -30,10 +30,6 @@ msgctxt "TMP_MAIN.CB_ENCRYPT_BY_SUBSTRACTION.CAPTION"
 msgid "Encrypt by substraction"
 msgstr ""
 
-#: tmp_main.cipher_buttons_container.caption
-msgid "cipher_buttons_container"
-msgstr ""
-
 #: tmp_main.codetable_chooser.text
 msgid "Choose your codetable →"
 msgstr ""
@@ -44,7 +40,7 @@ msgstr ""
 
 #: tmp_main.label_codetable.caption
 msgctxt "TMP_MAIN.LABEL_CODETABLE.CAPTION"
-msgid "Encoding table:"
+msgid "Encoding table (staggered checkerboard):"
 msgstr ""
 
 #: tmp_main.label_key.caption

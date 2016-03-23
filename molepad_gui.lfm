@@ -1,7 +1,7 @@
 object mp_main: Tmp_main
-  Left = 565
+  Left = 564
   Height = 404
-  Top = 205
+  Top = 185
   Width = 439
   Caption = 'MolePad'
   ClientHeight = 383
@@ -116,9 +116,9 @@ object mp_main: Tmp_main
           Left = 8
           Height = 15
           Top = 8
-          Width = 107
+          Width = 288
           BorderSpacing.Around = 8
-          Caption = 'Encoding table:'
+          Caption = 'Encoding table (staggered checkerboard):'
           Font.Style = [fsBold]
           ParentColor = False
           ParentFont = False
@@ -277,7 +277,7 @@ object mp_main: Tmp_main
         AutoSize = True
         BorderSpacing.Around = 8
         BevelOuter = bvNone
-        Caption = 'cipher_buttons_container'
+        ChildSizing.HorizontalSpacing = 8
         ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
         ChildSizing.ShrinkHorizontal = crsHomogenousSpaceResize
         ChildSizing.ShrinkVertical = crsHomogenousChildResize
@@ -290,15 +290,15 @@ object mp_main: Tmp_main
           Left = 0
           Height = 27
           Top = 0
-          Width = 209
+          Width = 205
           Caption = 'Encipher'
           TabOrder = 0
         end
         object button_decipher: TButton
-          Left = 209
+          Left = 213
           Height = 27
           Top = 0
-          Width = 208
+          Width = 204
           Caption = 'Decipher'
           TabOrder = 1
         end
@@ -315,5 +315,9 @@ object mp_main: Tmp_main
         OnClick = menuitem_exitClick
       end
     end
+  end
+  object loadCodetabeFile: TOpenDialog
+    left = 320
+    top = 312
   end
 end
