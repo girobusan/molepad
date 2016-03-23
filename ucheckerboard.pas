@@ -1,7 +1,7 @@
 unit ucheckerboard;
 
 {$mode objfpc}{$H+}
-
+{_codepage utf8}
 
 interface
 
@@ -9,7 +9,7 @@ uses
   {$ifdef unix}
   cwstring, //for right Unicode handling on *nix
   {$endif}
-  Classes, SysUtils, contnrs, StrUtils;
+  Classes, SysUtils, contnrs;
 type
   TCodeTable = Object
     title:string;
@@ -20,13 +20,13 @@ type
 
     procedure CreateFromStrings(strs:tstringlist);
     procedure CreateFromFile(filename:string);
-    function Encode(itxt:ansistring):ansistring; //virtual;
-    function Decode(txt:ansistring):ansistring; //virtual;
+    function Encode(itxt:ansistring):ansistring; virtual;
+    function Decode(txt:ansistring):ansistring; virtual;
 
     private
     cp1enc : TFPStringHashTable;  //all "main" characters to codes
     cp2enc : TFPStringHashTable;   //all "alt" characters to codes
-    cp1dec : TFPStringHashTable;  //all "main" codes to characters
+    cp1dec : TFPStringHashTable;   //all "main" codes to characters
     cp2dec : TFPStringHashTable;   //all "alt" codes to  characters
 
 
@@ -52,11 +52,11 @@ procedure TCodeTable.CreateFromStrings(strs:tStringList);
  var
 
    i:integer;
-   buffer:string;
-   upperbuffer:string;
+   buffer:ansistring;
+   upperbuffer:ansistring;
    readerState:integer=SNONE;
-   currentCode:string;
-   currentSymbol:string;
+   currentCode:ansistring;
+   currentSymbol:ansistring;
  begin
    rawsource:=strs.text;
    cp1enc:= TFPStringHashTable.Create(); //encode...
@@ -69,7 +69,7 @@ procedure TCodeTable.CreateFromStrings(strs:tStringList);
    for i:=0 to (strs.Count-1) do
    begin
      buffer:= Trim(strs[i]);
-     upperbuffer:=utf8encode(WideUpperCase(utf8decode(buffer)));
+     upperbuffer:=utf8encode( WideUpperCase( Utf8decode(buffer ) ) );
      if buffer = '' then Continue;
      if buffer[1] ='#' then Continue;
      //check if state must be changed
@@ -90,8 +90,7 @@ procedure TCodeTable.CreateFromStrings(strs:tStringList);
            end;
          SDESCRIPT:
            begin
-           if description='' then description:= description + buffer
-           else description:= description + ' ' + buffer;
+           description:= description + buffer;
            Continue
            end;
          SLETTERS:
@@ -152,17 +151,17 @@ function TCodeTable.Encode(itxt:ansistring):ansistring;
   var
 
     i:integer;
-    txt:widestring;
-    b:widestring;  //buffer
+    txt:string;
+    b:string;  //buffer
     cpage1:boolean=True; //cp of current text
     fig:boolean=False; //do we do digits
-    r:ansistring=''; //result
+    r:string=''; //result
   begin
     //encoding loop
-    txt:=WideUpperCase(itxt);
-    for  i:=1 to length(utf8decode(txt)) do
+    txt:=utf8encode(WideUpperCase( utf8decode(itxt) ));
+    for  i:=1 to length(utf8decode( utf8encode(txt) )) do
     begin
-       b:= Copy(utf8decode(txt), i,1 );             //txt[i];
+       b:= utf8encode( Copy(utf8decode(txt), i,1 ));             //txt[i];
 
 
        //if symnol is unknown?
@@ -233,12 +232,12 @@ function TCodeTable.Decode(txt:ansistring):ansistring;
     iscp1:boolean=True;
     isDigits:boolean=False;
     wst:widestring;
-    buff:widestring;
-    rz:widestring='';
+    buff:string;
+    rz:string='';
   begin
     wst:=utf8decode(txt);
     repeat
-      buff:=copy(wst,position,blength);
+      buff:=utf8encode( copy(wst,position,blength));
 
       //DIGITS
       //check, if we're already in the digits block

@@ -2,7 +2,15 @@ msgid ""
 msgstr "Content-Type: text/plain; charset=UTF-8"
 
 #: molepad_gui.ssloadcodetable
-msgid "Load table from file"
+msgid "Load custom table from file..."
+msgstr ""
+
+#: molepad_gui.ssusecodetable
+msgid "Use the "
+msgstr ""
+
+#: molepad_gui.ssusecodetablefin
+msgid " table."
 msgstr ""
 
 #: tmp_main.button_decipher.caption
@@ -27,7 +35,7 @@ msgid "cipher_buttons_container"
 msgstr ""
 
 #: tmp_main.codetable_chooser.text
-msgid "Choose codetable"
+msgid "Choose your codetable →"
 msgstr ""
 
 #: tmp_main.codetable_description.caption
@@ -49,10 +57,6 @@ msgstr ""
 
 #: tmp_main.menu_file.caption
 msgid "File"
-msgstr ""
-
-#: tmp_main.panel_key_top.caption
-msgid "panel_key_top"
 msgstr ""
 
 #: tmp_main.tab_cipher.caption

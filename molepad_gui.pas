@@ -64,7 +64,9 @@ var
 
 resourcestring
 
-ssLoadCodetable='Load table from file';
+ssLoadCodetable='Load custom table from file...';
+ssUseCodetable='Use the ';
+ssUseCodetableFin=' table.';
 
 implementation
 
@@ -97,7 +99,7 @@ end;
 procedure Tmp_main.FormCreate(Sender: TObject);
 begin
   //Set the checkbox at KEY tab
-  if not isEncByAddition then cb_encrypt_by_substraction.checked:=False
+  if isEncByAddition then cb_encrypt_by_substraction.checked:=False
   else cb_encrypt_by_substraction.checked:=True;
   //populate drop-down with encoding tables
   //SONET-C
@@ -112,11 +114,12 @@ begin
    tsl.LoadFromStream(trs);
    tables[2].CreateFromStrings(tsl);
    tsl.free;
+   trs.free;
 
    codetable_chooser.Items.Clear;
    for i:=1 to length(tables) do
    begin
-     codetable_chooser.Items.Add(tables[i].title);
+     codetable_chooser.Items.Add(ssUseCodetable + tables[i].title + ssUseCodetableFin);
    end;
      codetable_chooser.Items.Add(ssLoadCodetable);
 

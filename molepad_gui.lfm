@@ -31,9 +31,9 @@ object mp_main: Tmp_main
     Height = 360
     Top = 0
     Width = 439
-    ActivePage = tab_cipher
+    ActivePage = tab_key
     Anchors = [akTop, akLeft, akRight, akBottom]
-    TabIndex = 1
+    TabIndex = 0
     TabOrder = 1
     object tab_key: TTabSheet
       Caption = 'Key and encoding'
@@ -144,7 +144,7 @@ object mp_main: Tmp_main
           OnChange = codetable_chooserChange
           Style = csSimple
           TabOrder = 0
-          Text = 'Choose codetable'
+          Text = 'Choose your codetable →'
         end
         object codetable_description: TLabel
           AnchorSideLeft.Control = panel_key_bottom
