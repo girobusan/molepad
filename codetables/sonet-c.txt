@@ -1,0 +1,97 @@
+title
+	SONET-C
+
+description
+
+	Cyrillic and Latin encryption table, same as SONET-L, 
+        but Cyrillic is main codepage, Latin is alternative one.
+
+letters
+	abcdefghijklmnopqrstuvwxyzабвгдеёжзийклмнопрстуфхцчшщыъьэюя
+
+codetable
+
+0 !fig
+
+1 с
+2 о
+3 н
+4 е
+5 т
+60 а
+61 б
+62 в
+63 г
+64 д
+65 ж
+66 з
+67 и
+68 й
+69 к
+70 л
+71 м
+72 п
+73 р
+74 у
+75 ф
+76 х
+77 ц
+78 ч
+79 ш
+80 щ
+81 ы
+82 ъ
+83 ь
+84 э
+85 ю
+86 я
+
+87 !cp1
+88 !cp2
+89 !code
+90 .
+91 ,
+92 ?
+93 !
+94 -
+95 +
+96 *
+97 /
+98 @
+99 !space
+
+altcodes
+
+1 s
+2 o
+3 n
+4 e
+5 t
+
+60 a
+61 b
+62 c
+63 d
+64 f
+65 g
+66 h
+67 i
+68 j
+69 k
+
+70 l
+71 m
+72 p
+73 q
+74 r
+75 u
+76 v 
+77 w
+78 x
+79 y
+
+80 z
+81 &
+82 #
+
+

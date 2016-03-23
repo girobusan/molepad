@@ -1,0 +1,73 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8"
+
+#: molepad_gui.ssloadcodetable
+msgid "Load table from file"
+msgstr ""
+
+#: tmp_main.button_decipher.caption
+msgid "Decipher"
+msgstr ""
+
+#: tmp_main.button_encipher.caption
+msgid "Encipher"
+msgstr ""
+
+#: tmp_main.caption
+msgid "MolePad"
+msgstr ""
+
+#: tmp_main.cb_encrypt_by_substraction.caption
+msgctxt "TMP_MAIN.CB_ENCRYPT_BY_SUBSTRACTION.CAPTION"
+msgid "Encrypt by substraction"
+msgstr ""
+
+#: tmp_main.cipher_buttons_container.caption
+msgid "cipher_buttons_container"
+msgstr ""
+
+#: tmp_main.codetable_chooser.text
+msgid "Choose codetable"
+msgstr ""
+
+#: tmp_main.codetable_description.caption
+msgid "Please, choose the codetable from list, or choose \"load from file\" to load the custom one."
+msgstr ""
+
+#: tmp_main.label_codetable.caption
+msgctxt "TMP_MAIN.LABEL_CODETABLE.CAPTION"
+msgid "Encoding table:"
+msgstr ""
+
+#: tmp_main.label_key.caption
+msgid "One-time key:"
+msgstr ""
+
+#: tmp_main.menuitem_exit.caption
+msgid "Exit"
+msgstr ""
+
+#: tmp_main.menu_file.caption
+msgid "File"
+msgstr ""
+
+#: tmp_main.panel_key_top.caption
+msgid "panel_key_top"
+msgstr ""
+
+#: tmp_main.tab_cipher.caption
+msgid "Cipher"
+msgstr ""
+
+#: tmp_main.tab_key.caption
+msgid "Key and encoding"
+msgstr ""
+
+#: tmp_main.tab_result_encoded.caption
+msgid "Encoded result"
+msgstr ""
+
+#: tmp_main.tab_result_final.caption
+msgid "Result"
+msgstr ""
+

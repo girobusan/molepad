@@ -9,9 +9,14 @@
       <ResourceType Value="res"/>
       <UseXPManifest Value="True"/>
       <Icon Value="0"/>
+      <Resources Count="2">
+        <Resource_0 FileName="codetables/sonet-c.txt" Type="RCDATA" ResourceName="SONET-C"/>
+        <Resource_1 FileName="codetables/sonet-l.txt" Type="RCDATA" ResourceName="SONET-L"/>
+      </Resources>
     </General>
     <i18n>
-      <EnableI18N LFM="False"/>
+      <EnableI18N Value="True"/>
+      <OutDir Value="po_files"/>
     </i18n>
     <VersionInfo>
       <StringTable ProductVersion=""/>
@@ -32,7 +37,7 @@
         <PackageName Value="LCL"/>
       </Item1>
     </RequiredPackages>
-    <Units Count="2">
+    <Units Count="6">
       <Unit0>
         <Filename Value="molepad.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -40,10 +45,26 @@
       <Unit1>
         <Filename Value="molepad_gui.pas"/>
         <IsPartOfProject Value="True"/>
-        <ComponentName Value="Form1"/>
+        <ComponentName Value="mp_main"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
       </Unit1>
+      <Unit2>
+        <Filename Value="OTPcipher.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="uspybeauty.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="ucheckerboard.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="otherstrings.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit5>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
