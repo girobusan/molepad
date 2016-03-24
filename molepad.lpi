@@ -39,7 +39,7 @@
         <PackageName Value="LCL"/>
       </Item1>
     </RequiredPackages>
-    <Units Count="6">
+    <Units Count="7">
       <Unit0>
         <Filename Value="molepad.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -68,6 +68,12 @@
         <Filename Value="otherstrings.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit5>
+      <Unit6>
+        <Filename Value="viewsource.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="view_source"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit6>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

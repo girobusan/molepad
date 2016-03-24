@@ -63,6 +63,10 @@ msgstr ""
 msgid "File"
 msgstr ""
 
+#: tmp_main.menu_tools.caption
+msgid "Tools"
+msgstr ""
+
 #: tmp_main.tab_cipher.caption
 msgid "Cipher"
 msgstr ""
@@ -77,5 +81,17 @@ msgstr ""
 
 #: tmp_main.tab_result_final.caption
 msgid "Result"
+msgstr ""
+
+#: tmp_main.viewsrc.caption
+msgid "View table source"
+msgstr ""
+
+#: tview_source.caption
+msgid "View current table source"
+msgstr ""
+
+#: tview_source.close_vs.caption
+msgid "Close"
 msgstr ""
 

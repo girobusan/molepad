@@ -9,7 +9,8 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
-  OTPcipher, ucheckerboard,uspybeauty,
+  OTPcipher, ucheckerboard,uspybeauty,viewsource,
+
   ComCtrls, StdCtrls, ExtCtrls, ActnList;
 var
   curtable   : ^TCodeTable;
@@ -30,6 +31,7 @@ type
   { Tmp_main }
 
   Tmp_main = class(TForm)
+    viewSrc: TAction;
     DecipherAndDecode: TAction;
     EncodeAndEncipher: TAction;
     loadTable: TAction;
@@ -47,6 +49,10 @@ type
     memo_encoded_text: TMemo;
     memo_key: TMemo;
     MenuItem1: TMenuItem;
+    MenuItem2: TMenuItem;
+    MenuItem3: TMenuItem;
+    MenuItem4: TMenuItem;
+    menu_tools: TMenuItem;
     menu_file: TMenuItem;
     menuitem_exit: TMenuItem;
     loadCodetabeFile: TOpenDialog;
@@ -61,6 +67,7 @@ type
     tab_result_encoded: TTabSheet;
     tab_key: TTabSheet;
     tab_cipher: TTabSheet;
+    procedure viewSrcExecute(Sender: TObject);
     procedure DecipherAndDecodeExecute(Sender: TObject);
     procedure EncodeAndEncipherExecute(Sender: TObject);
     procedure loadTableExecute(Sender: TObject);
@@ -143,6 +150,15 @@ begin
   performDecipher;
 end;
 
+procedure Tmp_main.viewSrcExecute(Sender: TObject);
+begin
+  if assigned(curTable) then
+   begin
+   view_source.memo_src.Lines.text:=curTable^.rawsource;
+   view_source.Show();
+   end;
+end;
+
 procedure Tmp_main.FormCreate(Sender: TObject);
 begin
   //Set the checkbox at KEY tab
@@ -178,15 +194,19 @@ var
   input:string;
   otkey:string;
   encoded:string;
+  indicator:string;
   //output:string;
 begin
   //prepare key
-  otkey:= extractNums( mp_main.memo_key.lines.text);
+
+  otkey:= extractNums( mp_main.memo_key.lines.text);;
   if otkey='' then
    begin
      ShowMessage('No valid key found');
      exit;
    end;
+   indicator:=copy(otkey,1,5);
+   otkey:=copy(otkey,6,length(otkey)-5);
   //check table
   if not assigned(curTable) then
    begin
@@ -202,10 +222,11 @@ begin
    end;
   //encode
   //ShowMessage(curTable^.Title);
-  encoded:= spyGrouping (curTable^.Encode(input));
+  encoded:= curTable^.Encode(input);
+  ShowMessage(encoded);
   mp_main.memo_encoded_text.lines.text:= SpyGrouping(encoded);
   //encrypt
-  mp_main.memo_final_result.lines.text:=SpyGrouping(Cipher(encoded, otkey, True));
+  mp_main.memo_final_result.lines.text:=indicator + ' ' + SpyGrouping(Cipher(encoded, otkey, True));
 end;
 
 //decrypt
@@ -214,6 +235,7 @@ var
   input:string;
   otkey:string;
   encoded:string;
+  indicator:string;
   //output:string;
 begin
   //prepare key
@@ -223,6 +245,8 @@ begin
      ShowMessage('No valid key found');
      exit;
    end;
+   indicator:=copy(otkey,1,5);
+   otkey:=copy(otkey,6,length(otkey)-5);
   //check table
   if not assigned(curTable) then
    begin
@@ -237,7 +261,12 @@ begin
      exit;
    end;
   //decrypt
-  encoded:= Cipher(input, otkey, False) ;
+  //check indicator
+  if (leftstr(input, 5)<>indicator) then
+   begin
+     ShowMessage('Indicator group do not match the key.');
+   end;
+  encoded:= Cipher(copy(input, 6, length(input)-5 ), otkey, False) ;
   mp_main.memo_encoded_text.lines.text:= SpyGrouping(encoded);
   //decode
   mp_main.memo_final_result.lines.text:=curTable^.Decode(encoded) // Cipher(encoded, otkey, True);

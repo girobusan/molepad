@@ -1,7 +1,7 @@
 object mp_main: Tmp_main
-  Left = 596
+  Left = 341
   Height = 404
-  Top = 199
+  Top = 188
   Width = 439
   Caption = 'MolePad'
   ClientHeight = 383
@@ -324,6 +324,18 @@ object mp_main: Tmp_main
         OnClick = menuitem_exitClick
       end
     end
+    object menu_tools: TMenuItem
+      Caption = 'Tools'
+      object MenuItem2: TMenuItem
+        Action = EncodeAndEncipher
+      end
+      object MenuItem3: TMenuItem
+        Action = DecipherAndDecode
+      end
+      object MenuItem4: TMenuItem
+        Action = viewSrc
+      end
+    end
   end
   object loadCodetabeFile: TOpenDialog
     left = 320
@@ -342,6 +354,10 @@ object mp_main: Tmp_main
     object DecipherAndDecode: TAction
       Caption = 'Decipher and decode'
       OnExecute = DecipherAndDecodeExecute
+    end
+    object viewSrc: TAction
+      Caption = 'View table source'
+      OnExecute = viewSrcExecute
     end
   end
 end

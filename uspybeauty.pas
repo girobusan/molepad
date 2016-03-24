@@ -21,11 +21,11 @@ function SpyGrouping(s:ansistring; pad:boolean=true):ansistring; //Group them li
   const
     FiveBullets='00000';
   begin
-    ws:=s;
+    ws:=Trim(s);
     p:= length(ws) mod 5;
 
 
-       for i:=1 to (length(s)) do
+       for i:=1 to (length(ws)) do
            begin
            r:=r+s[i];
            if ((i mod 5) = 0) then r:=r+' ';  //ALL spies ALL the time group them by 5.
