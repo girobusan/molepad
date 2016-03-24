@@ -9,9 +9,11 @@
       <ResourceType Value="res"/>
       <UseXPManifest Value="True"/>
       <Icon Value="0"/>
-      <Resources Count="2">
+      <Resources Count="4">
         <Resource_0 FileName="codetables/sonet-c.txt" Type="RCDATA" ResourceName="SONET-C"/>
         <Resource_1 FileName="codetables/sonet-l.txt" Type="RCDATA" ResourceName="SONET-L"/>
+        <Resource_2 FileName="codetables/ct55.txt" Type="RCDATA" ResourceName="CT55"/>
+        <Resource_3 FileName="codetables/ct-1-English.txt" Type="RCDATA" ResourceName="CT-1-ENGLISH"/>
       </Resources>
     </General>
     <i18n>
@@ -58,8 +60,9 @@
         <IsPartOfProject Value="True"/>
       </Unit3>
       <Unit4>
-        <Filename Value="ucheckerboard.pas"/>
+        <Filename Value="codetables/ct55.txt"/>
         <IsPartOfProject Value="True"/>
+        <UnitName Value="ucheckerboard"/>
       </Unit4>
       <Unit5>
         <Filename Value="otherstrings.pas"/>
@@ -70,13 +73,23 @@
   <CompilerOptions>
     <Version Value="11"/>
     <Target>
-      <Filename Value="molepad"/>
+      <Filename Value="binary/molepad"/>
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
       <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
+    <CodeGeneration>
+      <SmartLinkUnit Value="True"/>
+      <Optimizations>
+        <OptimizationLevel Value="3"/>
+      </Optimizations>
+      <SmallerCode Value="True"/>
+    </CodeGeneration>
     <Linking>
+      <Debugging>
+        <UseExternalDbgSyms Value="True"/>
+      </Debugging>
       <Options>
         <Win32>
           <GraphicApplication Value="True"/>

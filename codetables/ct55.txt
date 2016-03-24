@@ -1,0 +1,64 @@
+title
+	CT-55-M
+
+description
+
+C-55 encryption table for Latin alphabet, adapted for use with this program. Punctuation signs are marked not with digits (as in original table), but as alternative codes. Code 89 switches to digits and back to letters, 99 - to alt codes (punctuation), 92 - back to regular alphabet (RPT in original table). Other codes are left as is. 
+
+letters
+	abcdefghijklmnopqrstuvwxyz?!/+-*=
+
+codetable
+
+0 a
+1 e
+2 i
+3 n
+4 o
+5 s
+6 t
+
+70 b
+71 c
+72 d
+73 f
+74 g
+75 h
+76 j
+77 k
+78 l
+79 m
+
+80 p
+81 q
+82 r
+83 u
+84 v
+85 w
+86 x
+
+87 y
+88 z
+89 !fig
+90 !space
+91 !code
+92 !CP1
+93 .
+94 ,
+95 '
+96 :
+97 (
+98 )
+99 !CP2
+
+altcodes
+
+80 ?
+81 !
+82 /
+83 +
+84 -
+85 *
+86 =
+
+

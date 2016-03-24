@@ -1,7 +1,7 @@
 object mp_main: Tmp_main
-  Left = 564
+  Left = 563
   Height = 404
-  Top = 185
+  Top = 165
   Width = 439
   Caption = 'MolePad'
   ClientHeight = 383
@@ -47,12 +47,12 @@ object mp_main: Tmp_main
       ClientWidth = 433
       object panel_key_top: TPanel
         Left = 0
-        Height = 141
+        Height = 327
         Top = 0
         Width = 433
         AutoSize = True
         BevelOuter = bvNone
-        ClientHeight = 141
+        ClientHeight = 327
         ClientWidth = 433
         TabOrder = 0
         object label_key: TLabel
@@ -75,7 +75,7 @@ object mp_main: Tmp_main
           AnchorSideBottom.Control = panel_key_top
           AnchorSideBottom.Side = asrBottom
           Left = 8
-          Height = 102
+          Height = 288
           Top = 31
           Width = 417
           Anchors = [akTop, akLeft, akRight, akBottom]
@@ -104,19 +104,22 @@ object mp_main: Tmp_main
       end
       object panel_key_bottom: TPanel
         Left = 0
-        Height = 186
-        Top = 141
+        Height = 112
+        Top = 215
         Width = 433
+        Align = alBottom
         AutoSize = True
         BevelOuter = bvNone
-        ClientHeight = 186
+        ClientHeight = 112
         ClientWidth = 433
         TabOrder = 1
         object label_codetable: TLabel
+          AnchorSideBottom.Control = codetable_chooser
           Left = 8
           Height = 15
           Top = 8
           Width = 288
+          Anchors = [akLeft, akBottom]
           BorderSpacing.Around = 8
           Caption = 'Encoding table (staggered checkerboard):'
           Font.Style = [fsBold]
@@ -129,11 +132,12 @@ object mp_main: Tmp_main
           AnchorSideTop.Side = asrBottom
           AnchorSideRight.Control = panel_key_bottom
           AnchorSideRight.Side = asrBottom
+          AnchorSideBottom.Control = codetable_description
           Left = 8
           Height = 27
           Top = 31
           Width = 417
-          Anchors = [akTop, akLeft, akRight]
+          Anchors = [akLeft, akRight, akBottom]
           BorderSpacing.Left = 8
           BorderSpacing.Right = 8
           ItemHeight = 0
@@ -155,13 +159,14 @@ object mp_main: Tmp_main
           AnchorSideBottom.Control = panel_key_bottom
           AnchorSideBottom.Side = asrBottom
           Left = 13
-          Height = 120
+          Height = 30
           Top = 66
           Width = 385
-          Anchors = [akTop, akLeft, akRight, akBottom]
+          Anchors = [akLeft, akRight, akBottom]
           BorderSpacing.Left = 13
           BorderSpacing.Top = 8
           BorderSpacing.Right = 35
+          BorderSpacing.Bottom = 16
           Caption = 'Please, choose the codetable from list, or choose "load from file" to load the custom one.'
           ParentColor = False
           WordWrap = True
@@ -219,8 +224,8 @@ object mp_main: Tmp_main
           TabOrder = 1
           object tab_result_final: TTabSheet
             Caption = 'Result'
-            ClientHeight = 125
-            ClientWidth = 411
+            ClientHeight = 154
+            ClientWidth = 413
             object memo_final_result: TMemo
               AnchorSideLeft.Control = tab_result_final
               AnchorSideTop.Control = tab_result_final
@@ -243,8 +248,8 @@ object mp_main: Tmp_main
           end
           object tab_result_encoded: TTabSheet
             Caption = 'Encoded result'
-            ClientHeight = 125
-            ClientWidth = 411
+            ClientHeight = 154
+            ClientWidth = 413
             object memo_encoded_text: TMemo
               AnchorSideLeft.Control = tab_result_encoded
               AnchorSideRight.Control = tab_result_encoded

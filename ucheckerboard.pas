@@ -2,7 +2,7 @@ unit ucheckerboard;
 
 {$mode objfpc}{$H+}
 (*
-Implementation of "staggered checkerboard" (нерегулярная таблица) encoding.
+Implementation of "Straddling checkerboard" (нерегулярная таблица) encoding.
 
 *)
 
@@ -48,16 +48,23 @@ implementation
 
 constructor TCodeTable.Init();
   begin
-  Title:='Untitled';
-  Description:='No description provided'
+  Title:='';
+  Description:='';
+  letters:='';
+  rawsource:='';
   end;
 
 destructor TCodeTable.Destroy();
 begin
- cp1enc.free;
- cp2enc.free;
- cp1dec.free;
- cp2dec.free;
+  title:='';
+  description:='';
+  letters:='';
+  rawsource:='';
+
+  cp1enc.free;
+  cp2enc.free;
+  cp1dec.free;
+  cp2dec.free;
 
 end;
 

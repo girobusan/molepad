@@ -12,11 +12,17 @@ uses
   OTPcipher, ucheckerboard,
   ComCtrls, StdCtrls, ExtCtrls;
 var
-  curtable : ^TCodeTable;
-  tables   : array[1..2] of TCodeTable;
-  trs      : TResourceStream;
-  tsl      : TStringList;
-  i        : integer;
+  curtable   : ^TCodeTable;
+  customTable: TCodeTable;
+  tables     : array of TCodeTable;
+  trs        : TResourceStream;
+  tsl        : TStringList;
+  i          : integer;
+  x          : integer;
+
+const
+
+  rTables: array[0..3] of string =('SONET-C','SONET-L','CT55','CT-1-ENGLISH') ; //FIX
 
 
 type
@@ -77,26 +83,26 @@ implementation
 { Tmp_main }
 
 procedure Tmp_main.codetable_chooserChange(Sender: TObject);
-var
-  filename:string;
-begin
-  if Assigned(curTable) then Dispose(curTable);
-  New(curTable);
-  if codetable_chooser.ItemIndex=length(tables) then
+  var
+    filename:string;
   begin
-    if loadCodetabeFile.Execute then
+    if codetable_chooser.ItemIndex=length(tables) then
     begin
-    filename := loadCodetabeFile.Filename;
-    curTable^.createFromFile(filename);
-    end;
-  end
-  else
-    begin
-    curTable^:=tables[codetable_chooser.ItemIndex + 1];
-    end;
-  codetable_description.caption:=curTable^.description;
-  codetable_chooser.text:= curTable^.Title //FIX
-end;
+      if loadCodetabeFile.Execute then
+      begin
+        customTable.Init;
+        filename := loadCodetabeFile.Filename;
+        customTable.createFromFile(filename);
+        curTable:=@customTable;
+      end;
+    end
+    else
+      begin
+      curTable:=@tables[codetable_chooser.ItemIndex];
+      end;
+    codetable_description.caption:=curTable^.description;
+    codetable_chooser.text:= curTable^.Title //FIX
+  end;
 
 procedure Tmp_main.cb_encrypt_by_substractionChange(Sender: TObject);
 begin
@@ -109,27 +115,24 @@ begin
   //Set the checkbox at KEY tab
   if isEncByAddition then cb_encrypt_by_substraction.checked:=False
   else cb_encrypt_by_substraction.checked:=True;
-  //populate drop-down with encoding tables
-  //SONET-C
-   trs := TResourceStream.Create(HInstance, 'SONET-C', RT_RCDATA);
+  //load tables from resources
+  SetLength(Tables , length(rTables) );
+  for x:=0 to Length(rTables)-1 do
+  begin
+   trs := TResourceStream.Create(HInstance, rTables[x], RT_RCDATA);
    tsl:= TStringList.Create;
    tsl.LoadFromStream(trs);
-   tables[1].CreateFromStrings(tsl);
-   tsl.free;
-   //SONET-L (FIX)
-   trs := TResourceStream.Create(HInstance, 'SONET-L', RT_RCDATA);
-   tsl:= TStringList.Create;
-   tsl.LoadFromStream(trs);
-   tables[2].CreateFromStrings(tsl);
+   tables[x].CreateFromStrings(tsl);
+  end;
    tsl.free;
    trs.free;
-
+  //populate drop-down menu
    codetable_chooser.Items.Clear;
-   for i:=1 to length(tables) do
+   for i:=0 to length(tables)-1 do
    begin
      codetable_chooser.Items.Add(ssUseCodetable + tables[i].title + ssUseCodetableFin);
    end;
-     codetable_chooser.Items.Add(ssLoadCodetable);
+   codetable_chooser.Items.Add(ssLoadCodetable);
 
 
 end;

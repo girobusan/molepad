@@ -1,0 +1,57 @@
+title
+	CT №1 English
+
+description
+
+Good old CT №1, only basic Latin letters and numbers. No alternative encoding.  
+
+letters
+	abcdefghijklmnopqrstuvwxyz
+
+codetable
+
+1 a
+2 e
+3 i
+4 n
+5 o
+6 t
+
+
+
+70 b
+71 c
+72 d
+73 f
+74 g
+75 h
+76 j
+77 k
+78 l
+79 m
+
+80 p
+81 q
+82 r
+83 s
+84 u
+85 v
+86 w
+87 x
+88 y
+89 z
+
+90 !fig
+91 .
+92 :
+93 '
+#94 ,
+95 +
+96 -
+97 =
+#98 was REQ, not implemented
+99 !space
+
+
+
+
