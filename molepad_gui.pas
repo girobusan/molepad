@@ -9,8 +9,8 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
-  OTPcipher, ucheckerboard,
-  ComCtrls, StdCtrls, ExtCtrls;
+  OTPcipher, ucheckerboard,uspybeauty,
+  ComCtrls, StdCtrls, ExtCtrls, ActnList;
 var
   curtable   : ^TCodeTable;
   customTable: TCodeTable;
@@ -30,6 +30,9 @@ type
   { Tmp_main }
 
   Tmp_main = class(TForm)
+    encipher: TAction;
+    loadTable: TAction;
+    ActionList1: TActionList;
     button_encipher: TButton;
     button_decipher: TButton;
     cb_encrypt_by_substraction: TCheckBox;
@@ -42,6 +45,7 @@ type
     memo_final_result: TMemo;
     memo_encoded_text: TMemo;
     memo_key: TMemo;
+    MenuItem1: TMenuItem;
     menu_file: TMenuItem;
     menuitem_exit: TMenuItem;
     loadCodetabeFile: TOpenDialog;
@@ -56,11 +60,15 @@ type
     tab_result_encoded: TTabSheet;
     tab_key: TTabSheet;
     tab_cipher: TTabSheet;
+    procedure encipherExecute(Sender: TObject);
+    procedure loadTableExecute(Sender: TObject);
     procedure cb_encrypt_by_substractionChange(Sender: TObject);
     procedure codetable_chooserChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure memo_input_textChange(Sender: TObject);
+    procedure MenuItem1Click(Sender: TObject);
     procedure menuitem_exitClick(Sender: TObject);
+
   private
     { private declarations }
   public
@@ -76,6 +84,8 @@ ssLoadCodetable='Load custom table from file...';
 ssUseCodetable='Use the ';
 ssUseCodetableFin=' table.';
 
+procedure performCipher();
+
 implementation
 
 {$R *.lfm}
@@ -83,23 +93,16 @@ implementation
 { Tmp_main }
 
 procedure Tmp_main.codetable_chooserChange(Sender: TObject);
-  var
-    filename:string;
+
   begin
     if codetable_chooser.ItemIndex=length(tables) then
     begin
-      if loadCodetabeFile.Execute then
-      begin
-        customTable.Init;
-        filename := loadCodetabeFile.Filename;
-        customTable.createFromFile(filename);
-        curTable:=@customTable;
-      end;
+     loadTableExecute(codetable_chooser);
     end
     else
-      begin
+    begin
       curTable:=@tables[codetable_chooser.ItemIndex];
-      end;
+    end;
     codetable_description.caption:=curTable^.description;
     codetable_chooser.text:= curTable^.Title //FIX
   end;
@@ -108,6 +111,26 @@ procedure Tmp_main.cb_encrypt_by_substractionChange(Sender: TObject);
 begin
   if cb_encrypt_by_substraction.checked then setEncByAdditionTo(False)
   else setEncByAdditionTo(True)
+end;
+
+procedure Tmp_main.loadTableExecute(Sender: TObject);
+var
+  filename:string;
+begin
+     if loadCodetabeFile.Execute then
+      begin
+        customTable.Init;
+        filename := loadCodetabeFile.Filename;
+        customTable.createFromFile(filename);
+        curTable:=@customTable;
+      end;
+     codetable_description.caption:=curTable^.description;
+    codetable_chooser.text:= curTable^.Title //FIX
+end;
+
+procedure Tmp_main.encipherExecute(Sender: TObject);
+begin
+  performCipher;
 end;
 
 procedure Tmp_main.FormCreate(Sender: TObject);
@@ -137,7 +160,51 @@ begin
 
 end;
 
+//encrypt
+procedure performCipher();
+var
+  input:string;
+  otkey:string;
+  encoded:string;
+  output:string;
+begin
+  //prepare key
+  otkey:= extractNums( mp_main.memo_key.lines.text);
+  if otkey='' then
+   begin
+     ShowMessage('No valid key found');
+     exit;
+   end;
+  //check table
+  if not assigned(curTable) then
+   begin
+     ShowMessage('No code table selected');
+     exit;
+   end;
+  //check source
+  input:= trim( mp_main.memo_input_text.lines.text) ;
+  if input='' then
+   begin
+      ShowMessage('No source text entered');
+     exit;
+   end;
+  //encode
+  ShowMessage(curTable^.Title);
+  encoded:= spyGrouping (curTable^.Encode(input));
+  mp_main.memo_encoded_text.lines.text:= encoded;
+  //encrypt
+  mp_main.memo_final_result.lines.text:=Cipher(encoded, otkey, True);
+
+
+
+end;
+
 procedure Tmp_main.memo_input_textChange(Sender: TObject);
+begin
+
+end;
+
+procedure Tmp_main.MenuItem1Click(Sender: TObject);
 begin
 
 end;

@@ -17,10 +17,6 @@ msgstr ""
 msgid "Decipher"
 msgstr ""
 
-#: tmp_main.button_encipher.caption
-msgid "Encipher"
-msgstr ""
-
 #: tmp_main.caption
 msgid "MolePad"
 msgstr ""
@@ -38,6 +34,11 @@ msgstr ""
 msgid "Please, choose the codetable from list, or choose \"load from file\" to load the custom one."
 msgstr ""
 
+#: tmp_main.encipher.caption
+msgctxt "TMP_MAIN.ENCIPHER.CAPTION"
+msgid "Encipher"
+msgstr ""
+
 #: tmp_main.label_codetable.caption
 msgctxt "TMP_MAIN.LABEL_CODETABLE.CAPTION"
 msgid "Encoding table (staggered checkerboard):"
@@ -45,6 +46,10 @@ msgstr ""
 
 #: tmp_main.label_key.caption
 msgid "One-time key:"
+msgstr ""
+
+#: tmp_main.loadtable.caption
+msgid "Load table from file"
 msgstr ""
 
 #: tmp_main.menuitem_exit.caption

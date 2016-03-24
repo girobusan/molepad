@@ -1,7 +1,7 @@
 object mp_main: Tmp_main
-  Left = 563
+  Left = 285
   Height = 404
-  Top = 165
+  Top = 171
   Width = 439
   Caption = 'MolePad'
   ClientHeight = 383
@@ -31,9 +31,9 @@ object mp_main: Tmp_main
     Height = 360
     Top = 0
     Width = 439
-    ActivePage = tab_key
+    ActivePage = tab_cipher
     Anchors = [akTop, akLeft, akRight, akBottom]
-    TabIndex = 0
+    TabIndex = 1
     TabOrder = 1
     object tab_key: TTabSheet
       Caption = 'Key and encoding'
@@ -224,8 +224,8 @@ object mp_main: Tmp_main
           TabOrder = 1
           object tab_result_final: TTabSheet
             Caption = 'Result'
-            ClientHeight = 154
-            ClientWidth = 413
+            ClientHeight = 125
+            ClientWidth = 411
             object memo_final_result: TMemo
               AnchorSideLeft.Control = tab_result_final
               AnchorSideTop.Control = tab_result_final
@@ -248,8 +248,8 @@ object mp_main: Tmp_main
           end
           object tab_result_encoded: TTabSheet
             Caption = 'Encoded result'
-            ClientHeight = 154
-            ClientWidth = 413
+            ClientHeight = 125
+            ClientWidth = 411
             object memo_encoded_text: TMemo
               AnchorSideLeft.Control = tab_result_encoded
               AnchorSideRight.Control = tab_result_encoded
@@ -296,7 +296,7 @@ object mp_main: Tmp_main
           Height = 27
           Top = 0
           Width = 205
-          Caption = 'Encipher'
+          Action = encipher
           TabOrder = 0
         end
         object button_decipher: TButton
@@ -315,6 +315,10 @@ object mp_main: Tmp_main
     top = 312
     object menu_file: TMenuItem
       Caption = 'File'
+      object MenuItem1: TMenuItem
+        Action = loadTable
+        OnClick = MenuItem1Click
+      end
       object menuitem_exit: TMenuItem
         Caption = 'Exit'
         OnClick = menuitem_exitClick
@@ -324,5 +328,16 @@ object mp_main: Tmp_main
   object loadCodetabeFile: TOpenDialog
     left = 320
     top = 312
+  end
+  object ActionList1: TActionList
+    left = 320
+    object loadTable: TAction
+      Caption = 'Load table from file'
+      OnExecute = loadTableExecute
+    end
+    object encipher: TAction
+      Caption = 'Encipher'
+      OnExecute = encipherExecute
+    end
   end
 end

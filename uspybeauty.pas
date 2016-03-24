@@ -17,16 +17,22 @@ function SpyGrouping(s:ansistring; pad:boolean=true):ansistring; //Group them li
      r:ansistring='';
      i:integer;
      p:integer=0;
+     ws:ansistring;
   const
     FiveBullets='00000';
   begin
+    ws:=s;
+    p:= length(ws) mod 5;
+
+
        for i:=1 to (length(s)) do
            begin
            r:=r+s[i];
            if ((i mod 5) = 0) then r:=r+' ';  //ALL spies ALL the time group them by 5.
            end;
-        if pad then p:= length(r) mod 5;
-        SpyGrouping:=r + copy(FiveBullets, 1, p)
+       if pad and (p<>0) then r:= r+copy(fiveBullets, 1, 5-p);
+
+        SpyGrouping:=r
   end;
 
 function extractNums(s:ansistring):ansistring;
