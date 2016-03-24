@@ -30,7 +30,8 @@ type
   { Tmp_main }
 
   Tmp_main = class(TForm)
-    encipher: TAction;
+    DecipherAndDecode: TAction;
+    EncodeAndEncipher: TAction;
     loadTable: TAction;
     ActionList1: TActionList;
     button_encipher: TButton;
@@ -60,11 +61,13 @@ type
     tab_result_encoded: TTabSheet;
     tab_key: TTabSheet;
     tab_cipher: TTabSheet;
-    procedure encipherExecute(Sender: TObject);
+    procedure DecipherAndDecodeExecute(Sender: TObject);
+    procedure EncodeAndEncipherExecute(Sender: TObject);
     procedure loadTableExecute(Sender: TObject);
     procedure cb_encrypt_by_substractionChange(Sender: TObject);
     procedure codetable_chooserChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+
     procedure memo_input_textChange(Sender: TObject);
     procedure MenuItem1Click(Sender: TObject);
     procedure menuitem_exitClick(Sender: TObject);
@@ -83,8 +86,10 @@ resourcestring
 ssLoadCodetable='Load custom table from file...';
 ssUseCodetable='Use the ';
 ssUseCodetableFin=' table.';
+ssCodeWarning='Warning! This text is NOT enciphered';
 
-procedure performCipher();
+procedure performEncipher();
+procedure performDecipher();
 
 implementation
 
@@ -128,9 +133,14 @@ begin
     codetable_chooser.text:= curTable^.Title //FIX
 end;
 
-procedure Tmp_main.encipherExecute(Sender: TObject);
+procedure Tmp_main.EncodeAndEncipherExecute(Sender: TObject);
 begin
-  performCipher;
+  performEncipher;
+end;
+
+procedure Tmp_main.DecipherAndDecodeExecute(Sender: TObject);
+begin
+  performDecipher;
 end;
 
 procedure Tmp_main.FormCreate(Sender: TObject);
@@ -160,13 +170,15 @@ begin
 
 end;
 
+
+
 //encrypt
-procedure performCipher();
+procedure performEncipher();
 var
   input:string;
   otkey:string;
   encoded:string;
-  output:string;
+  //output:string;
 begin
   //prepare key
   otkey:= extractNums( mp_main.memo_key.lines.text);
@@ -189,13 +201,46 @@ begin
      exit;
    end;
   //encode
-  ShowMessage(curTable^.Title);
+  //ShowMessage(curTable^.Title);
   encoded:= spyGrouping (curTable^.Encode(input));
-  mp_main.memo_encoded_text.lines.text:= encoded;
+  mp_main.memo_encoded_text.lines.text:= SpyGrouping(encoded);
   //encrypt
-  mp_main.memo_final_result.lines.text:=Cipher(encoded, otkey, True);
+  mp_main.memo_final_result.lines.text:=SpyGrouping(Cipher(encoded, otkey, True));
+end;
 
-
+//decrypt
+procedure performDecipher();
+var
+  input:string;
+  otkey:string;
+  encoded:string;
+  //output:string;
+begin
+  //prepare key
+  otkey:= extractNums( mp_main.memo_key.lines.text);
+  if otkey='' then
+   begin
+     ShowMessage('No valid key found');
+     exit;
+   end;
+  //check table
+  if not assigned(curTable) then
+   begin
+     ShowMessage('No code table selected');
+     exit;
+   end;
+  //check source
+  input:= trim( mp_main.memo_input_text.lines.text) ;
+  if input='' then
+   begin
+      ShowMessage('No source text entered');
+     exit;
+   end;
+  //decrypt
+  encoded:= Cipher(input, otkey, False) ;
+  mp_main.memo_encoded_text.lines.text:= SpyGrouping(encoded);
+  //decode
+  mp_main.memo_final_result.lines.text:=curTable^.Decode(encoded) // Cipher(encoded, otkey, True);
 
 end;
 

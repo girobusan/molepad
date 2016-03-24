@@ -81,7 +81,7 @@ begin
        end;
    //if encypher then  ShowMessage('Encrypted');
 
-   Cipher:=SpyGrouping(r);
+   Cipher:=r;
 end;
 
 end.

@@ -1,6 +1,10 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=UTF-8"
 
+#: molepad_gui.sscodewarning
+msgid "Warning! This text is NOT enciphered"
+msgstr ""
+
 #: molepad_gui.ssloadcodetable
 msgid "Load custom table from file..."
 msgstr ""
@@ -11,10 +15,6 @@ msgstr ""
 
 #: molepad_gui.ssusecodetablefin
 msgid " table."
-msgstr ""
-
-#: tmp_main.button_decipher.caption
-msgid "Decipher"
 msgstr ""
 
 #: tmp_main.caption
@@ -34,9 +34,12 @@ msgstr ""
 msgid "Please, choose the codetable from list, or choose \"load from file\" to load the custom one."
 msgstr ""
 
-#: tmp_main.encipher.caption
-msgctxt "TMP_MAIN.ENCIPHER.CAPTION"
-msgid "Encipher"
+#: tmp_main.decipheranddecode.caption
+msgid "Decipher and decode"
+msgstr ""
+
+#: tmp_main.encodeandencipher.caption
+msgid "Encode and encipher"
 msgstr ""
 
 #: tmp_main.label_codetable.caption

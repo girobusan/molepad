@@ -12,7 +12,7 @@ uses
   {$ifdef unix}
   cwstring, //for right Unicode handling on *nix
   {$endif}
-  Classes, SysUtils, contnrs;
+  Classes, SysUtils, contnrs,uspybeauty;
 type
   TCodeTable = Object
     title:string;
@@ -248,21 +248,17 @@ function TCodeTable.Encode(itxt:ansistring):ansistring;
     Encode:=r
     end;
 
-
-
-
-
 function TCodeTable.Decode(txt:ansistring):ansistring;
   var
     position:integer=1;
     blength:integer=1;
     iscp1:boolean=True;
     isDigits:boolean=False;
-    wst:widestring;
+    wst:string;
     buff:string;
     rz:string='';
   begin
-    wst:=utf8decode(txt);
+    wst:=extractNums(txt);
     repeat
       buff:=utf8encode( copy(wst,position,blength));
 

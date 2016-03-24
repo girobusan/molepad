@@ -1,7 +1,7 @@
 object mp_main: Tmp_main
-  Left = 285
+  Left = 596
   Height = 404
-  Top = 171
+  Top = 199
   Width = 439
   Caption = 'MolePad'
   ClientHeight = 383
@@ -219,8 +219,8 @@ object mp_main: Tmp_main
           Height = 158
           Top = 118
           Width = 417
-          ActivePage = tab_result_final
-          TabIndex = 0
+          ActivePage = tab_result_encoded
+          TabIndex = 1
           TabOrder = 1
           object tab_result_final: TTabSheet
             Caption = 'Result'
@@ -264,7 +264,7 @@ object mp_main: Tmp_main
               BorderSpacing.Around = 8
               Font.Color = clRed
               Lines.Strings = (
-                'Memo3'
+                ''
               )
               ParentFont = False
               ScrollBars = ssAutoVertical
@@ -296,7 +296,7 @@ object mp_main: Tmp_main
           Height = 27
           Top = 0
           Width = 205
-          Action = encipher
+          Action = EncodeAndEncipher
           TabOrder = 0
         end
         object button_decipher: TButton
@@ -304,7 +304,7 @@ object mp_main: Tmp_main
           Height = 27
           Top = 0
           Width = 204
-          Caption = 'Decipher'
+          Action = DecipherAndDecode
           TabOrder = 1
         end
       end
@@ -335,9 +335,13 @@ object mp_main: Tmp_main
       Caption = 'Load table from file'
       OnExecute = loadTableExecute
     end
-    object encipher: TAction
-      Caption = 'Encipher'
-      OnExecute = encipherExecute
+    object EncodeAndEncipher: TAction
+      Caption = 'Encode and encipher'
+      OnExecute = EncodeAndEncipherExecute
+    end
+    object DecipherAndDecode: TAction
+      Caption = 'Decipher and decode'
+      OnExecute = DecipherAndDecodeExecute
     end
   end
 end
