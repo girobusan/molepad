@@ -156,7 +156,8 @@ begin
    begin
    view_source.memo_src.Lines.text:=curTable^.rawsource;
    view_source.Show();
-   end;
+   end
+  else showMessage('No table selected.');
 end;
 
 procedure Tmp_main.FormCreate(Sender: TObject);

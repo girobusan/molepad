@@ -62,7 +62,6 @@
       <Unit4>
         <Filename Value="codetables/ct55.txt"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="ucheckerboard"/>
       </Unit4>
       <Unit5>
         <Filename Value="otherstrings.pas"/>
@@ -72,6 +71,7 @@
         <Filename Value="viewsource.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="view_source"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
       </Unit6>
     </Units>

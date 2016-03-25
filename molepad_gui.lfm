@@ -1,7 +1,7 @@
 object mp_main: Tmp_main
-  Left = 341
+  Left = 601
   Height = 404
-  Top = 188
+  Top = 169
   Width = 439
   Caption = 'MolePad'
   ClientHeight = 383
@@ -46,13 +46,18 @@ object mp_main: Tmp_main
       ClientHeight = 327
       ClientWidth = 433
       object panel_key_top: TPanel
+        AnchorSideLeft.Control = tab_key
+        AnchorSideRight.Control = tab_key
+        AnchorSideRight.Side = asrBottom
+        AnchorSideBottom.Control = panel_key_bottom
         Left = 0
-        Height = 327
+        Height = 215
         Top = 0
         Width = 433
+        Anchors = [akTop, akLeft, akRight, akBottom]
         AutoSize = True
         BevelOuter = bvNone
-        ClientHeight = 327
+        ClientHeight = 215
         ClientWidth = 433
         TabOrder = 0
         object label_key: TLabel
@@ -75,10 +80,11 @@ object mp_main: Tmp_main
           AnchorSideBottom.Control = panel_key_top
           AnchorSideBottom.Side = asrBottom
           Left = 8
-          Height = 288
+          Height = 175
           Top = 31
           Width = 417
           Anchors = [akTop, akLeft, akRight, akBottom]
+          BorderSpacing.Bottom = 1
           BorderSpacing.Around = 8
           Lines.Strings = (
             ''
@@ -219,8 +225,8 @@ object mp_main: Tmp_main
           Height = 158
           Top = 118
           Width = 417
-          ActivePage = tab_result_encoded
-          TabIndex = 1
+          ActivePage = tab_result_final
+          TabIndex = 0
           TabOrder = 1
           object tab_result_final: TTabSheet
             Caption = 'Result'
@@ -242,6 +248,7 @@ object mp_main: Tmp_main
               Lines.Strings = (
                 ''
               )
+              ReadOnly = True
               ScrollBars = ssAutoVertical
               TabOrder = 0
             end

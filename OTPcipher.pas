@@ -16,7 +16,7 @@ function Cipher(src:ansistring; key:ansistring; encypher:boolean):ansistring;
 implementation
 
 var
-   encypherByAddition:boolean=True;
+   encypherByAddition:boolean=False;
 
 procedure changeEncryptionType();
    begin
