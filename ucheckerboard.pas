@@ -185,7 +185,7 @@ function TCodeTable.Encode(itxt:ansistring):ansistring;
     r:string=''; //result
   begin
     //encoding loop
-    txt:=utf8encode(WideUpperCase( utf8decode(itxt) ));
+    txt:=UTF8UpperCase(itxt);
     for  i:=1 to length(utf8decode( utf8encode(txt) )) do
     begin
        b:= utf8encode( Copy(utf8decode(txt), i,1 ));             //txt[i];
