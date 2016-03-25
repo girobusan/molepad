@@ -224,7 +224,7 @@ begin
   //encode
   //ShowMessage(curTable^.Title);
   encoded:= curTable^.Encode(input);
-  ShowMessage(encoded);
+  //ShowMessage(encoded);
   mp_main.memo_encoded_text.lines.text:= SpyGrouping(encoded);
   //encrypt
   mp_main.memo_final_result.lines.text:=indicator + ' ' + SpyGrouping(Cipher(encoded, otkey, True));

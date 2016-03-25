@@ -31,9 +31,9 @@ object mp_main: Tmp_main
     Height = 360
     Top = 0
     Width = 439
-    ActivePage = tab_cipher
+    ActivePage = tab_key
     Anchors = [akTop, akLeft, akRight, akBottom]
-    TabIndex = 1
+    TabIndex = 0
     TabOrder = 1
     object tab_key: TTabSheet
       Caption = 'Key and encoding'
@@ -225,8 +225,8 @@ object mp_main: Tmp_main
           Height = 158
           Top = 118
           Width = 417
-          ActivePage = tab_result_final
-          TabIndex = 0
+          ActivePage = tab_result_encoded
+          TabIndex = 1
           TabOrder = 1
           object tab_result_final: TTabSheet
             Caption = 'Result'

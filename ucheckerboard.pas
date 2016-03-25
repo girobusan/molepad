@@ -1,4 +1,5 @@
 unit ucheckerboard;
+ {$CODEPAGE UTF8}
 
 {$mode objfpc}{$H+}
 (*
@@ -12,7 +13,7 @@ uses
   {$ifdef unix}
   cwstring, //for right Unicode handling on *nix
   {$endif}
-  Classes, SysUtils, contnrs,uspybeauty;
+  Classes, SysUtils, contnrs,uspybeauty,Dialogs;
 type
   TCodeTable = Object
     title:string;
@@ -132,12 +133,13 @@ procedure TCodeTable.CreateFromStrings(strs:tStringList);
          //extract code and symbol from buffer
           currentCode:= copy(buffer, 1, pos(' ', buffer)-1 );
           currentSymbol := copy(upperbuffer, pos(' ', buffer)+1, 6  );
-          //writeln('Code '+ currentCode + ' means ' + currentSymbol + '.');
+          //ShowMessage('Code '+ currentCode + ' means ' + currentSymbol + '.');
           //filling codetables
           try
           if readerState = SCODE1 then
             begin
             cp1dec.Add(currentCode, currentSymbol);
+            //ShowMessage(currentSymbol + cp1dec[currentCode] );
             cp1enc.Add(currentSymbol,currentCode)
             end;
           if readerState = SCODE2 then
@@ -155,10 +157,7 @@ procedure TCodeTable.CreateFromStrings(strs:tStringList);
    end;//end reading loop
    //test
    writeln('It is codetable, named "'+ title+'", descripted as "' + description +'"');
-   //writeln('Hashtables filled');
-   //writeln ('cp1-' + IntToStr(cp1enc.Count));
-   //writeln ('cp2-' + IntToStr(cp2enc.Count));
-   ///test
+
 
  end;
 
@@ -189,12 +188,13 @@ function TCodeTable.Encode(itxt:ansistring):ansistring;
     for  i:=1 to length(utf8decode( utf8encode(txt) )) do
     begin
        b:= utf8encode( Copy(utf8decode(txt), i,1 ));             //txt[i];
-
-
+       //ShowMessage(b);
+       //ShowMessage('cp1 ' + cp1enc[b]);
+       //ShowMessage('cp2 ' + cp2enc[b]);
        //if symnol is unknown?
        if (pos(b, digits)=0) and ( cp1enc[b]='' ) and  (cp2enc[b]='') and not(b=' ') then
          begin
-         writeln('Unknown symbol '+b);
+         //ShowMessage('Unknown symbol '+b);
          r:=r+'';
          Continue
          end;

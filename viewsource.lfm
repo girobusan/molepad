@@ -1,7 +1,7 @@
 object view_source: Tview_source
-  Left = 808
+  Left = 186
   Height = 401
-  Top = 332
+  Top = 617
   Width = 445
   Caption = 'View current table source'
   ClientHeight = 401
