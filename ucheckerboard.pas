@@ -11,7 +11,7 @@ interface
 
 uses
   {$ifdef unix}
-  cwstring, //for right Unicode handling on *nix
+  cwstring,lazUTF8, //for right Unicode handling on *nix
   {$endif}
   Classes, SysUtils, contnrs,uspybeauty,Dialogs;
 type
@@ -97,7 +97,8 @@ procedure TCodeTable.CreateFromStrings(strs:tStringList);
    for i:=0 to (strs.Count-1) do
    begin
      buffer:= Trim(strs[i]);
-     upperbuffer:=utf8encode( WideUpperCase( Utf8decode(buffer ) ) );
+     //upperbuffer:=utf8encode( WideUpperCase( Utf8decode(buffer ) ) );
+     upperbuffer:=UTF8UpperCase( buffer );
      if buffer = '' then Continue;
      if buffer[1] ='#' then Continue;
      //check if state must be changed
@@ -188,6 +189,7 @@ function TCodeTable.Encode(itxt:ansistring):ansistring;
     for  i:=1 to length(utf8decode( utf8encode(txt) )) do
     begin
        b:= utf8encode( Copy(utf8decode(txt), i,1 ));             //txt[i];
+
        //ShowMessage(b);
        //ShowMessage('cp1 ' + cp1enc[b]);
        //ShowMessage('cp2 ' + cp2enc[b]);
@@ -260,8 +262,8 @@ function TCodeTable.Decode(txt:ansistring):ansistring;
   begin
     wst:=extractNums(txt);
     repeat
-      buff:=utf8encode( copy(wst,position,blength));
-
+      //buff:=utf8encode( copy(wst,position,blength));
+       buff:=copy(wst,position,blength);
       //DIGITS
       //check, if we're already in the digits block
       if isDigits then
