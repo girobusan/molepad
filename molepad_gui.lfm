@@ -1,7 +1,7 @@
 object mp_main: Tmp_main
-  Left = 606
+  Left = 622
   Height = 404
-  Top = 134
+  Top = 246
   Width = 439
   Caption = 'MolePad'
   ClientHeight = 383
@@ -59,7 +59,7 @@ object mp_main: Tmp_main
         BevelOuter = bvNone
         ClientHeight = 215
         ClientWidth = 433
-        Color = clBackground
+        Color = clForm
         ParentColor = False
         TabOrder = 0
         object label_key: TLabel
@@ -120,7 +120,7 @@ object mp_main: Tmp_main
         BevelOuter = bvNone
         ClientHeight = 112
         ClientWidth = 433
-        Color = clBackground
+        Color = clForm
         ParentColor = False
         TabOrder = 1
         object label_codetable: TLabel
@@ -211,7 +211,7 @@ object mp_main: Tmp_main
         ChildSizing.ControlsPerLine = 1
         ClientHeight = 276
         ClientWidth = 417
-        Color = clBackground
+        Color = clForm
         ParentColor = False
         TabOrder = 0
         object memo_input_text: TMemo
@@ -303,7 +303,7 @@ object mp_main: Tmp_main
         ChildSizing.ControlsPerLine = 2
         ClientHeight = 27
         ClientWidth = 417
-        Color = clBackground
+        Color = clForm
         ParentColor = False
         TabOrder = 1
         object button_encipher: TButton
