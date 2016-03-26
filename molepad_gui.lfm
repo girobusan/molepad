@@ -1,7 +1,7 @@
 object mp_main: Tmp_main
-  Left = 601
+  Left = 606
   Height = 404
-  Top = 169
+  Top = 134
   Width = 439
   Caption = 'MolePad'
   ClientHeight = 383
@@ -31,9 +31,9 @@ object mp_main: Tmp_main
     Height = 360
     Top = 0
     Width = 439
-    ActivePage = tab_key
+    ActivePage = tab_cipher
     Anchors = [akTop, akLeft, akRight, akBottom]
-    TabIndex = 0
+    TabIndex = 1
     TabOrder = 1
     object tab_key: TTabSheet
       Caption = 'Key and encoding'
@@ -59,6 +59,8 @@ object mp_main: Tmp_main
         BevelOuter = bvNone
         ClientHeight = 215
         ClientWidth = 433
+        Color = clBackground
+        ParentColor = False
         TabOrder = 0
         object label_key: TLabel
           Left = 8
@@ -118,6 +120,8 @@ object mp_main: Tmp_main
         BevelOuter = bvNone
         ClientHeight = 112
         ClientWidth = 433
+        Color = clBackground
+        ParentColor = False
         TabOrder = 1
         object label_codetable: TLabel
           AnchorSideBottom.Control = codetable_chooser
@@ -207,6 +211,8 @@ object mp_main: Tmp_main
         ChildSizing.ControlsPerLine = 1
         ClientHeight = 276
         ClientWidth = 417
+        Color = clBackground
+        ParentColor = False
         TabOrder = 0
         object memo_input_text: TMemo
           Left = 0
@@ -225,8 +231,8 @@ object mp_main: Tmp_main
           Height = 158
           Top = 118
           Width = 417
-          ActivePage = tab_result_encoded
-          TabIndex = 1
+          ActivePage = tab_result_final
+          TabIndex = 0
           TabOrder = 1
           object tab_result_final: TTabSheet
             Caption = 'Result'
@@ -297,6 +303,8 @@ object mp_main: Tmp_main
         ChildSizing.ControlsPerLine = 2
         ClientHeight = 27
         ClientWidth = 417
+        Color = clBackground
+        ParentColor = False
         TabOrder = 1
         object button_encipher: TButton
           Left = 0
