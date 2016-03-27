@@ -1,18 +1,19 @@
 object mp_main: Tmp_main
-  Left = 622
+  Left = 455
   Height = 404
-  Top = 246
+  Top = 232
   Width = 439
+  BorderStyle = bsSizeToolWin
   Caption = 'MolePad'
-  ClientHeight = 383
+  ClientHeight = 404
   ClientWidth = 439
   Menu = MainMenu1
   OnCreate = FormCreate
   LCLVersion = '1.6.0.4'
   object StatusBar: TStatusBar
     Left = 0
-    Height = 23
-    Top = 360
+    Height = 15
+    Top = 389
     Width = 439
     Panels = <    
       item
@@ -28,7 +29,7 @@ object mp_main: Tmp_main
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = StatusBar
     Left = 0
-    Height = 360
+    Height = 389
     Top = 0
     Width = 439
     ActivePage = tab_cipher
@@ -43,7 +44,7 @@ object mp_main: Tmp_main
       ChildSizing.ShrinkVertical = crsScaleChilds
       ChildSizing.Layout = cclLeftToRightThenTopToBottom
       ChildSizing.ControlsPerLine = 1
-      ClientHeight = 327
+      ClientHeight = 350
       ClientWidth = 433
       object panel_key_top: TPanel
         AnchorSideLeft.Control = tab_key
@@ -51,20 +52,19 @@ object mp_main: Tmp_main
         AnchorSideRight.Side = asrBottom
         AnchorSideBottom.Control = panel_key_bottom
         Left = 0
-        Height = 215
+        Height = 241
         Top = 0
         Width = 433
         Anchors = [akTop, akLeft, akRight, akBottom]
         AutoSize = True
         BevelOuter = bvNone
-        ClientHeight = 215
+        ClientHeight = 241
         ClientWidth = 433
-        Color = clForm
         ParentColor = False
         TabOrder = 0
         object label_key: TLabel
           Left = 8
-          Height = 15
+          Height = 16
           Top = 8
           Width = 96
           BorderSpacing.Around = 8
@@ -82,13 +82,14 @@ object mp_main: Tmp_main
           AnchorSideBottom.Control = panel_key_top
           AnchorSideBottom.Side = asrBottom
           Left = 8
-          Height = 175
-          Top = 31
+          Height = 200
+          Top = 32
           Width = 417
           Anchors = [akTop, akLeft, akRight, akBottom]
           BorderSpacing.Bottom = 1
           BorderSpacing.Around = 8
           Lines.Strings = (
+            ''
             ''
           )
           ScrollBars = ssAutoVertical
@@ -98,10 +99,10 @@ object mp_main: Tmp_main
           AnchorSideTop.Control = panel_key_top
           AnchorSideRight.Control = panel_key_top
           AnchorSideRight.Side = asrBottom
-          Left = 255
-          Height = 22
+          Left = 258
+          Height = 18
           Top = 4
-          Width = 170
+          Width = 167
           Anchors = [akTop, akRight]
           BorderSpacing.Top = 4
           BorderSpacing.Right = 8
@@ -112,23 +113,22 @@ object mp_main: Tmp_main
       end
       object panel_key_bottom: TPanel
         Left = 0
-        Height = 112
-        Top = 215
+        Height = 109
+        Top = 241
         Width = 433
         Align = alBottom
         AutoSize = True
         BevelOuter = bvNone
-        ClientHeight = 112
+        ClientHeight = 109
         ClientWidth = 433
-        Color = clForm
         ParentColor = False
         TabOrder = 1
         object label_codetable: TLabel
           AnchorSideBottom.Control = codetable_chooser
           Left = 8
-          Height = 15
+          Height = 16
           Top = 8
-          Width = 288
+          Width = 279
           Anchors = [akLeft, akBottom]
           BorderSpacing.Around = 8
           Caption = 'Encoding table (staggered checkerboard):'
@@ -144,8 +144,8 @@ object mp_main: Tmp_main
           AnchorSideRight.Side = asrBottom
           AnchorSideBottom.Control = codetable_description
           Left = 8
-          Height = 27
-          Top = 31
+          Height = 21
+          Top = 32
           Width = 417
           Anchors = [akLeft, akRight, akBottom]
           BorderSpacing.Left = 8
@@ -169,8 +169,8 @@ object mp_main: Tmp_main
           AnchorSideBottom.Control = panel_key_bottom
           AnchorSideBottom.Side = asrBottom
           Left = 13
-          Height = 30
-          Top = 66
+          Height = 32
+          Top = 61
           Width = 385
           Anchors = [akLeft, akRight, akBottom]
           BorderSpacing.Left = 13
@@ -191,11 +191,11 @@ object mp_main: Tmp_main
       ChildSizing.ShrinkVertical = crsScaleChilds
       ChildSizing.Layout = cclLeftToRightThenTopToBottom
       ChildSizing.ControlsPerLine = 1
-      ClientHeight = 327
+      ClientHeight = 350
       ClientWidth = 433
       object cipher_main_container: TPanel
         Left = 8
-        Height = 276
+        Height = 306
         Top = 8
         Width = 417
         Align = alClient
@@ -209,17 +209,17 @@ object mp_main: Tmp_main
         ChildSizing.ShrinkVertical = crsScaleChilds
         ChildSizing.Layout = cclLeftToRightThenTopToBottom
         ChildSizing.ControlsPerLine = 1
-        ClientHeight = 276
+        ClientHeight = 306
         ClientWidth = 417
-        Color = clForm
         ParentColor = False
         TabOrder = 0
         object memo_input_text: TMemo
           Left = 0
-          Height = 110
+          Height = 152
           Top = 0
           Width = 417
           Lines.Strings = (
+            ''
             ''
           )
           OnChange = memo_input_textChange
@@ -228,15 +228,15 @@ object mp_main: Tmp_main
         end
         object tabs_result: TPageControl
           Left = 0
-          Height = 158
-          Top = 118
+          Height = 146
+          Top = 160
           Width = 417
           ActivePage = tab_result_final
           TabIndex = 0
           TabOrder = 1
           object tab_result_final: TTabSheet
             Caption = 'Result'
-            ClientHeight = 125
+            ClientHeight = 107
             ClientWidth = 411
             object memo_final_result: TMemo
               AnchorSideLeft.Control = tab_result_final
@@ -246,12 +246,13 @@ object mp_main: Tmp_main
               AnchorSideBottom.Control = tab_result_final
               AnchorSideBottom.Side = asrBottom
               Left = 8
-              Height = 109
+              Height = 91
               Top = 8
               Width = 395
               Anchors = [akTop, akLeft, akRight, akBottom]
               BorderSpacing.Around = 8
               Lines.Strings = (
+                ''
                 ''
               )
               ReadOnly = True
@@ -278,6 +279,7 @@ object mp_main: Tmp_main
               Font.Color = clRed
               Lines.Strings = (
                 ''
+                ''
               )
               ParentFont = False
               ScrollBars = ssAutoVertical
@@ -288,8 +290,8 @@ object mp_main: Tmp_main
       end
       object cipher_buttons_container: TPanel
         Left = 8
-        Height = 27
-        Top = 292
+        Height = 20
+        Top = 322
         Width = 417
         Align = alBottom
         AutoSize = True
@@ -301,24 +303,23 @@ object mp_main: Tmp_main
         ChildSizing.ShrinkVertical = crsHomogenousChildResize
         ChildSizing.Layout = cclLeftToRightThenTopToBottom
         ChildSizing.ControlsPerLine = 2
-        ClientHeight = 27
+        ClientHeight = 20
         ClientWidth = 417
-        Color = clForm
         ParentColor = False
         TabOrder = 1
         object button_encipher: TButton
           Left = 0
-          Height = 27
+          Height = 20
           Top = 0
-          Width = 205
+          Width = 204
           Action = EncodeAndEncipher
           TabOrder = 0
         end
         object button_decipher: TButton
-          Left = 213
-          Height = 27
+          Left = 212
+          Height = 20
           Top = 0
-          Width = 204
+          Width = 205
           Action = DecipherAndDecode
           TabOrder = 1
         end
