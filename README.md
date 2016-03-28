@@ -6,6 +6,13 @@ Pen-and-pencil friendly one-time-pad cipher tool. Includes integrated staggered 
 
 ![Screenshot](media/molepad_alpha_screen.png)
 
+Disclaimer
+----------
+
+One-time-pad cipher is theoretically unbreakable, but in pratice you have to obey some rules to use it safely. And rule number one is — "There is no such thing as safe computer". Therefore, this program can be used for educational purpose only. Even in hardened environment you'd not trust it too much. 
+
+For better understanding of subject I'd recommend Dirk Rijmenants site: http://http://users.telenet.be/d.rijmenants/
+
 Features
 --------
 
