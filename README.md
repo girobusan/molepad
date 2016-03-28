@@ -9,7 +9,7 @@ Features
 --------
 
 1. Many encoding tables included, plus ability to load custom one from file
-2. Shows intermediat result of encryption/decryption process
+2. Shows intermediate result of encryption/decryption process
 3. Pen-and-pencil friendly algorithm, tested and approved by generations of spies
 
 
