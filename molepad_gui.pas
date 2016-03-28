@@ -271,7 +271,7 @@ begin
 end;
 
 //decrypt
-procedure performDecipher();
+procedure performDecipher();    //TODO:remove repetitions
 var
   input:string;
   otkey:string;

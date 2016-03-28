@@ -1,8 +1,5 @@
-msgid "(Alpha)(Alpha)(Alpha)(Alpha)(Alpha)(Alpha)(Alpha)(Alpha)(Alpha)(Alpha)one-time-pad encryption toolone-time-pad encryption toolone-time-pad encryption toolone-time-pad encryption toolone-time-pad encryption toolone-time-pad encryption tool"
+msgid "(Alpha)(Alpha)(Alpha)(Alpha)(Alpha)(Alpha)(Alpha)(Alpha)(Alpha)(Alpha)one-time-pad encryption toolone-time-pad encryption toolone-time-pad encryption toolone-time-pad encryption toolone-time-pad encryption toolone-time-pad encryption toolone-time-pad encryption tool"
 msgstr "Content-Type: text/plain; charset=UTF-8"
-
-msgid "one-time-pad encryption tool"
-msgstr ""
 
 #: molepad_gui.sscodewarning
 msgid "Warning! This text is NOT enciphered"
