@@ -9,7 +9,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
-  OTPcipher, ucheckerboard,uspybeauty,viewsource,
+  OTPcipher, ucheckerboard,uspybeauty,viewsource, about,
 
   ComCtrls, StdCtrls, ExtCtrls, ActnList;
 var
@@ -31,6 +31,8 @@ type
   { Tmp_main }
 
   Tmp_main = class(TForm)
+    menu_help_about: TMenuItem;
+    menu_help: TMenuItem;
     viewSrc: TAction;
     DecipherAndDecode: TAction;
     EncodeAndEncipher: TAction;
@@ -67,6 +69,8 @@ type
     tab_result_encoded: TTabSheet;
     tab_key: TTabSheet;
     tab_cipher: TTabSheet;
+    procedure menu_help_aboutClick(Sender: TObject);
+    procedure tab_result_encodedShow(Sender: TObject);
     procedure viewSrcExecute(Sender: TObject);
     procedure DecipherAndDecodeExecute(Sender: TObject);
     procedure EncodeAndEncipherExecute(Sender: TObject);
@@ -78,6 +82,7 @@ type
     procedure memo_input_textChange(Sender: TObject);
     procedure MenuItem1Click(Sender: TObject);
     procedure menuitem_exitClick(Sender: TObject);
+    procedure ShowInStatus(s:string);
 
   private
     { private declarations }
@@ -94,6 +99,9 @@ ssLoadCodetable='Load custom table from file...';
 ssUseCodetable='Use the ';
 ssUseCodetableFin=' table.';
 ssCodeWarning='Warning! This text is NOT enciphered';
+ssNoKey='No valid key found';
+ssNoTable='No code table selected';
+ssNoSource='No source text entered';
 
 procedure performEncipher();
 procedure performDecipher();
@@ -103,6 +111,11 @@ implementation
 {$R *.lfm}
 
 { Tmp_main }
+ procedure Tmp_main.ShowInStatus(s:string);
+    begin
+        StatusBar.SimpleText:=s;
+    end;
+
 
 procedure Tmp_main.codetable_chooserChange(Sender: TObject);
 
@@ -154,14 +167,41 @@ procedure Tmp_main.viewSrcExecute(Sender: TObject);
 begin
   if assigned(curTable) then
    begin
+   view_source.Caption:=curTable^.title;
    view_source.memo_src.Lines.text:=curTable^.rawsource;
    view_source.Show();
    end
-  else showMessage('No table selected.');
+  else showMessage(ssNoTable);
+end;
+
+procedure Tmp_main.tab_result_encodedShow(Sender: TObject);
+begin
+  ShowInStatus(ssCodeWarning);
+end;
+
+procedure Tmp_main.menu_help_aboutClick(Sender: TObject);
+begin
+   Fabout.ShowModal;
 end;
 
 procedure Tmp_main.FormCreate(Sender: TObject);
+var
+  I:integer;
 begin
+  ///////////////////STARTUP CLEANUP//////////////////
+  //for mac
+  {$IFDEF DARWIN}
+   begin
+       for I := 0 to mp_main.ControlCount - 1 do
+       begin
+           if (mp_main.Controls[I].ClassType = TButton) then
+               mp_main.Controls[I].Height := 22;
+       end;
+   end;
+   {$ENDIF}
+   //Set the right tabs
+   tabs_main.ActivePage:=tab_key;
+   tabs_result.ActivePage:=tab_result_final;
   //Set the checkbox at KEY tab
   if isEncByAddition then cb_encrypt_by_substraction.checked:=False
   else cb_encrypt_by_substraction.checked:=True;
@@ -203,7 +243,7 @@ begin
   otkey:= extractNums( mp_main.memo_key.lines.text);;
   if otkey='' then
    begin
-     ShowMessage('No valid key found');
+     ShowMessage(ssNoKey);
      exit;
    end;
    indicator:=copy(otkey,1,5);
@@ -211,14 +251,14 @@ begin
   //check table
   if not assigned(curTable) then
    begin
-     ShowMessage('No code table selected');
+     ShowMessage(ssNoTable);
      exit;
    end;
   //check source
   input:= trim( mp_main.memo_input_text.lines.text) ;
   if input='' then
    begin
-      ShowMessage('No source text entered');
+      ShowMessage(ssNoSource);
      exit;
    end;
   //encode
@@ -243,7 +283,7 @@ begin
   otkey:= extractNums( mp_main.memo_key.lines.text);
   if otkey='' then
    begin
-     ShowMessage('No valid key found');
+     ShowMessage(ssNoKey);
      exit;
    end;
    indicator:=copy(otkey,1,5);
@@ -251,14 +291,14 @@ begin
   //check table
   if not assigned(curTable) then
    begin
-     ShowMessage('No code table selected');
+     ShowMessage(ssNoTable);
      exit;
    end;
   //check source
   input:= trim( mp_main.memo_input_text.lines.text) ;
   if input='' then
    begin
-      ShowMessage('No source text entered');
+      ShowMessage(ssNoSource);
      exit;
    end;
   //decrypt
@@ -288,6 +328,8 @@ procedure Tmp_main.menuitem_exitClick(Sender: TObject);
 begin
   Halt(0);
 end;
+
+
 
 end.
 

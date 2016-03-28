@@ -1,0 +1,64 @@
+object Fabout: TFabout
+  Left = 684
+  Height = 227
+  Top = 486
+  Width = 320
+  AutoSize = True
+  BorderStyle = bsDialog
+  BorderWidth = 2
+  Caption = 'About'
+  ClientHeight = 227
+  ClientWidth = 320
+  Position = poDesktopCenter
+  LCLVersion = '1.6.0.4'
+  object Label1: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 18
+    Height = 38
+    Top = 34
+    Width = 284
+    Alignment = taCenter
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Top = 16
+    BorderSpacing.Around = 16
+    Caption = 'MolePad'
+    Font.Height = -32
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label2: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Label1
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 18
+    Height = 45
+    Top = 93
+    Width = 284
+    Alignment = taCenter
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Top = 5
+    BorderSpacing.Around = 16
+    Caption = 'Pen and pencil friendy'#10'one-time-pad encryption tool'#10'(Alpha)'
+    ParentColor = False
+  end
+  object Button1: TButton
+    AnchorSideLeft.Control = Label1
+    AnchorSideLeft.Side = asrCenter
+    AnchorSideTop.Control = Label2
+    AnchorSideTop.Side = asrBottom
+    Left = 123
+    Height = 25
+    Top = 170
+    Width = 75
+    BorderSpacing.Top = 16
+    BorderSpacing.Around = 16
+    Caption = 'Close'
+    OnClick = Button1Click
+    TabOrder = 0
+  end
+end

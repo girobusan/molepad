@@ -50,7 +50,8 @@ begin
      encypher:=encypher and encypherByAddition;
      src:=extractNums(src);
      key:=extractNums(key);
-   if length(src)> length(key) then
+     //ShowMessage(src + ':' + IntToStr(length(utf8decode(src))));
+   if length(utf8decode(src))> length(key) then
       begin
       Cipher:='(⊙︿⊙)'; // :_(
       ShowMessage('Insufficient key length');

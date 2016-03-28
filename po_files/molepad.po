@@ -1,4 +1,4 @@
-msgid ""
+msgid "(Alpha)(Alpha)(Alpha)(Alpha)"
 msgstr "Content-Type: text/plain; charset=UTF-8"
 
 #: molepad_gui.sscodewarning
@@ -9,6 +9,18 @@ msgstr ""
 msgid "Load custom table from file..."
 msgstr ""
 
+#: molepad_gui.ssnokey
+msgid "No valid key found"
+msgstr ""
+
+#: molepad_gui.ssnosource
+msgid "No source text entered"
+msgstr ""
+
+#: molepad_gui.ssnotable
+msgid "No code table selected"
+msgstr ""
+
 #: molepad_gui.ssusecodetable
 msgid "Use the "
 msgstr ""
@@ -17,7 +29,27 @@ msgstr ""
 msgid " table."
 msgstr ""
 
+#: tfabout.button1.caption
+msgctxt "TFABOUT.BUTTON1.CAPTION"
+msgid "Close"
+msgstr ""
+
+#: tfabout.caption
+msgctxt "tfabout.caption"
+msgid "About"
+msgstr ""
+
+#: tfabout.label1.caption
+msgctxt "TFABOUT.LABEL1.CAPTION"
+msgid "MolePad"
+msgstr ""
+
+#: tfabout.label2.caption
+msgid "Pen and pencil friendy"
+msgstr ""
+
 #: tmp_main.caption
+msgctxt "tmp_main.caption"
 msgid "MolePad"
 msgstr ""
 
@@ -63,6 +95,15 @@ msgstr ""
 msgid "File"
 msgstr ""
 
+#: tmp_main.menu_help.caption
+msgid "Help"
+msgstr ""
+
+#: tmp_main.menu_help_about.caption
+msgctxt "TMP_MAIN.MENU_HELP_ABOUT.CAPTION"
+msgid "About"
+msgstr ""
+
 #: tmp_main.menu_tools.caption
 msgid "Tools"
 msgstr ""
@@ -92,6 +133,7 @@ msgid "View current table source"
 msgstr ""
 
 #: tview_source.close_vs.caption
+msgctxt "tview_source.close_vs.caption"
 msgid "Close"
 msgstr ""
 
