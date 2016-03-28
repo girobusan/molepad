@@ -247,7 +247,7 @@ function TCodeTable.Encode(itxt:ansistring):ansistring;
          if(cp2enc[b]='') then r+=cp1enc[b] else  r+=cp2enc[b];  //not so dumb
          end
       end;//end main loop
-    Encode:=r
+    Encode:=PAdTo(r,5);
     end;
 
 function TCodeTable.Decode(txt:ansistring):ansistring;

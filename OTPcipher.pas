@@ -20,11 +20,13 @@ var
 
 procedure changeEncryptionType();
    begin
+      //ShowMessage('Newer use it');
        encypherByAddition:=not encypherByAddition
    end;
 
 procedure setEncByAdditionTo(val:boolean);
   begin
+      //ShowMessage('Newer use it');
    encypherByAddition:=val;
   end;
 
@@ -46,11 +48,17 @@ var
    sn:integer;      //current source text digit
    kn:integer;      //current key digit
    r:ansistring=''; //result
+   eflag:boolean;
 begin
-     encypher:=encypher and encypherByAddition;
+
+     eflag:=not(encypher xor encypherByAddition);
      src:=extractNums(src);
      key:=extractNums(key);
-     //ShowMessage(src + ':' + IntToStr(length(utf8decode(src))));
+     {*
+     if encypherByAddition then ShowMessage('encypherByAddition true!');
+     if encypher then ShowMessage('encypher tue!');
+     if eflag then ShowMessage('eflag tue!');
+     *}
    if length(utf8decode(src))> length(key) then
       begin
       Cipher:='(⊙︿⊙)'; // :_(
@@ -71,12 +79,14 @@ begin
              end;
 
          end;
-         if encypher then
+         if eflag then
             begin
+            //ShowMessage('Plus');
             r:=r+intToStr( (sn+kn) mod 10 )
             end
          else
              begin
+             //ShowMessage('Minus');
              r:=r+intToStr( mod10minus(sn,kn))
              end;
        end;

@@ -70,7 +70,7 @@ type
     tab_key: TTabSheet;
     tab_cipher: TTabSheet;
     procedure menu_help_aboutClick(Sender: TObject);
-    procedure tab_result_encodedShow(Sender: TObject);
+
     procedure viewSrcExecute(Sender: TObject);
     procedure DecipherAndDecodeExecute(Sender: TObject);
     procedure EncodeAndEncipherExecute(Sender: TObject);
@@ -134,6 +134,7 @@ procedure Tmp_main.codetable_chooserChange(Sender: TObject);
 
 procedure Tmp_main.cb_encrypt_by_substractionChange(Sender: TObject);
 begin
+  //ShowMessage('Pun');
   if cb_encrypt_by_substraction.checked then setEncByAdditionTo(False)
   else setEncByAdditionTo(True)
 end;
@@ -174,10 +175,7 @@ begin
   else showMessage(ssNoTable);
 end;
 
-procedure Tmp_main.tab_result_encodedShow(Sender: TObject);
-begin
-  ShowInStatus(ssCodeWarning);
-end;
+
 
 procedure Tmp_main.menu_help_aboutClick(Sender: TObject);
 begin

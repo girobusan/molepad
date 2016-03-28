@@ -9,6 +9,7 @@ uses
 
 function SpyGrouping(s:ansistring; pad:boolean=true):ansistring;
 function extractNums(s:ansistring):ansistring;
+function PadTo(s:string;p:integer):string;
 
 implementation
 
@@ -47,6 +48,16 @@ function extractNums(s:ansistring):ansistring;
         if s[i] in DIGITS then r:=r+s[i]
         end;
     extractNums:=r
+  end;
+
+function PadTo(s:string;p:integer):string;
+var
+   r:string;
+
+  begin
+    r:=s;
+    while (length(r) mod p)<>0 do r+='0';
+    PadTo:=r
   end;
 
 end.

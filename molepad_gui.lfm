@@ -1,7 +1,7 @@
 object mp_main: Tmp_main
   Left = 549
   Height = 385
-  Top = 129
+  Top = 109
   Width = 389
   BorderStyle = bsSizeToolWin
   Caption = 'MolePad'
@@ -231,8 +231,8 @@ object mp_main: Tmp_main
           Height = 149
           Top = 108
           Width = 367
-          ActivePage = tab_result_final
-          TabIndex = 0
+          ActivePage = tab_result_encoded
+          TabIndex = 1
           TabOrder = 1
           object tab_result_final: TTabSheet
             Caption = 'Result'
@@ -266,7 +266,6 @@ object mp_main: Tmp_main
             Caption = 'Encoded result'
             ClientHeight = 116
             ClientWidth = 361
-            OnShow = tab_result_encodedShow
             object memo_encoded_text: TMemo
               AnchorSideLeft.Control = tab_result_encoded
               AnchorSideRight.Control = tab_result_encoded
@@ -332,6 +331,7 @@ object mp_main: Tmp_main
   end
   object MainMenu1: TMainMenu
     left = 240
+    top = 65528
     object menu_file: TMenuItem
       Caption = 'File'
       object MenuItem1: TMenuItem
