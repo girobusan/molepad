@@ -1,5 +1,8 @@
-msgid "(Alpha)(Alpha)(Alpha)(Alpha)"
+msgid "(Alpha)(Alpha)(Alpha)(Alpha)(Alpha)(Alpha)(Alpha)(Alpha)(Alpha)(Alpha)one-time-pad encryption toolone-time-pad encryption toolone-time-pad encryption toolone-time-pad encryption toolone-time-pad encryption toolone-time-pad encryption tool"
 msgstr "Content-Type: text/plain; charset=UTF-8"
+
+msgid "one-time-pad encryption tool"
+msgstr ""
 
 #: molepad_gui.sscodewarning
 msgid "Warning! This text is NOT enciphered"
@@ -46,6 +49,10 @@ msgstr ""
 
 #: tfabout.label2.caption
 msgid "Pen and pencil friendy"
+msgstr ""
+
+#: tfabout.label3.caption
+msgid "v0.1a"
 msgstr ""
 
 #: tmp_main.caption
