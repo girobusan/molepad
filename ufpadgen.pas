@@ -26,7 +26,7 @@ type
     num_lines: TSpinEdit;
     padgen_lines_panel: TPanel;
     panel_pages: TPanel;
-    procedure num_linesChange(Sender: TObject);
+
     procedure padgenCloseClick(Sender: TObject);
     procedure padgen_generateClick(Sender: TObject);
   private
@@ -44,10 +44,7 @@ implementation
 
 { Tpad_gen }
 
-procedure Tpad_gen.num_linesChange(Sender: TObject);
-begin
 
-end;
 
 procedure Tpad_gen.padgenCloseClick(Sender: TObject);
 begin
@@ -64,7 +61,7 @@ begin
     fname:=pad_save.Filename;
     AssignFile(fout,fname);
     Rewrite(fout);
-    Writeln( fout, CreatePad(num_pages.Value,num_lines.Value));
+    Writeln( fout, CreatePad(num_pages.Value,num_lines.Value)); //FIX NEEDED
     CloseFile(fout);
     Close;
     end

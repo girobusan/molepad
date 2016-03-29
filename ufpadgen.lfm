@@ -4,7 +4,7 @@ object pad_gen: Tpad_gen
   Top = 143
   Width = 320
   AutoSize = True
-  Caption = 'pad_gen'
+  Caption = 'OTP generator'
   ClientHeight = 240
   ClientWidth = 320
   LCLVersion = '1.6.0.4'
@@ -95,18 +95,17 @@ object pad_gen: Tpad_gen
       Width = 55
       Anchors = [akTop, akRight]
       MaxValue = 1000
-      OnChange = num_linesChange
       TabOrder = 0
       Value = 15
     end
     object lines_label: TLabel
       AnchorSideLeft.Control = padgen_lines_panel
-      AnchorSideTop.Control = padgen_lines_panel
-      AnchorSideBottom.Control = num_lines
+      AnchorSideTop.Control = num_lines
+      AnchorSideTop.Side = asrCenter
       AnchorSideBottom.Side = asrCenter
       Left = 0
       Height = 17
-      Top = 0
+      Top = 5
       Width = 99
       Caption = 'Lines per page:'
       ParentColor = False
@@ -148,12 +147,12 @@ object pad_gen: Tpad_gen
     end
     object label_pages: TLabel
       AnchorSideLeft.Control = panel_pages
-      AnchorSideTop.Control = panel_pages
-      AnchorSideBottom.Control = num_pages
+      AnchorSideTop.Control = num_pages
+      AnchorSideTop.Side = asrCenter
       AnchorSideBottom.Side = asrCenter
       Left = 0
       Height = 17
-      Top = 0
+      Top = 5
       Width = 116
       Caption = 'Number of pages:'
       ParentColor = False
