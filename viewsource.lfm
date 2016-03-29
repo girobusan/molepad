@@ -1,7 +1,7 @@
 object view_source: Tview_source
-  Left = 946
+  Left = 1082
   Height = 401
-  Top = 581
+  Top = 484
   Width = 445
   Caption = 'View current table source'
   ClientHeight = 401
@@ -13,7 +13,7 @@ object view_source: Tview_source
     AnchorSideTop.Control = Owner
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
-    AnchorSideBottom.Control = close_vs
+    AnchorSideBottom.Control = button_close
     Left = 8
     Height = 350
     Top = 8
@@ -26,7 +26,7 @@ object view_source: Tview_source
     ScrollBars = ssAutoVertical
     TabOrder = 0
   end
-  object close_vs: TButton
+  object button_close: TButton
     AnchorSideLeft.Control = Owner
     AnchorSideLeft.Side = asrCenter
     AnchorSideRight.Control = Owner
@@ -41,7 +41,7 @@ object view_source: Tview_source
     AutoSize = True
     BorderSpacing.Bottom = 8
     Caption = 'Close'
-    OnClick = close_vsClick
+    OnClick = button_closeClick
     TabOrder = 1
   end
 end

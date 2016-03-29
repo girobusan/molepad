@@ -12,9 +12,9 @@ type
   { Tview_source }
 
   Tview_source = class(TForm)
-    close_vs: TButton;
+    button_close: TButton;
     memo_src: TMemo;
-    procedure close_vsClick(Sender: TObject);
+    procedure button_closeClick(Sender: TObject);
   private
     { private declarations }
   public
@@ -30,7 +30,7 @@ implementation
 
 { Tview_source }
 
-procedure Tview_source.close_vsClick(Sender: TObject);
+procedure Tview_source.button_closeClick(Sender: TObject);
 begin
   Close;
 end;

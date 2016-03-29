@@ -13,12 +13,12 @@ type
   { TFabout }
 
   TFabout = class(TForm)
-    Button1: TButton;
-    Image1: TImage;
-    Label1: TLabel;
-    Label2: TLabel;
-    Label3: TLabel;
-    procedure Button1Click(Sender: TObject);
+    Button_close: TButton;
+    ProgIcon: TImage;
+    ProgTitle: TLabel;
+    ProgDescription: TLabel;
+    ProgVersion: TLabel;
+    procedure Button_closeClick(Sender: TObject);
 
   private
     { private declarations }
@@ -35,7 +35,7 @@ implementation
 
 { TFabout }
 
-procedure TFabout.Button1Click(Sender: TObject);
+procedure TFabout.Button_closeClick(Sender: TObject);
 begin
   Close;
 end;

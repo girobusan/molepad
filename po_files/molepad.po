@@ -1,8 +1,8 @@
-msgid "(Alpha)(Alpha)(Alpha)(Alpha)(Alpha)(Alpha)(Alpha)(Alpha)(Alpha)(Alpha)one-time-pad encryption toolone-time-pad encryption toolone-time-pad encryption toolone-time-pad encryption toolone-time-pad encryption toolone-time-pad encryption toolone-time-pad encryption tool"
+msgid "(Alpha)(Alpha)(Alpha)(Alpha)(Alpha)(Alpha)(Alpha)(Alpha)(Alpha)(Alpha)one-time-pad encryption toolone-time-pad encryption toolone-time-pad encryption toolone-time-pad encryption toolone-time-pad encryption toolone-time-pad encryption toolone-time-pad encryption toolone-time-pad encryption toolone-time-pad encryption tool"
 msgstr "Content-Type: text/plain; charset=UTF-8"
 
 #: molepad_gui.sscodewarning
-msgid "Warning! This text is NOT enciphered"
+msgid "Warning! This text is NOT enciphered."
 msgstr ""
 
 #: molepad_gui.ssloadcodetable
@@ -10,15 +10,19 @@ msgid "Load custom table from file..."
 msgstr ""
 
 #: molepad_gui.ssnokey
-msgid "No valid key found"
+msgid "No valid key found."
 msgstr ""
 
 #: molepad_gui.ssnosource
-msgid "No source text entered"
+msgid "No source text entered."
 msgstr ""
 
 #: molepad_gui.ssnotable
-msgid "No code table selected"
+msgid "No code table selected."
+msgstr ""
+
+#: molepad_gui.ssnotimplemented
+msgid "Not implemented yet."
 msgstr ""
 
 #: molepad_gui.ssusecodetable
@@ -29,8 +33,8 @@ msgstr ""
 msgid " table."
 msgstr ""
 
-#: tfabout.button1.caption
-msgctxt "TFABOUT.BUTTON1.CAPTION"
+#: tfabout.button_close.caption
+msgctxt "TFABOUT.BUTTON_CLOSE.CAPTION"
 msgid "Close"
 msgstr ""
 
@@ -39,16 +43,18 @@ msgctxt "tfabout.caption"
 msgid "About"
 msgstr ""
 
-#: tfabout.label1.caption
-msgctxt "TFABOUT.LABEL1.CAPTION"
-msgid "MolePad"
-msgstr ""
-
-#: tfabout.label2.caption
+#: tfabout.progdescription.caption
+msgctxt "TFABOUT.PROGDESCRIPTION.CAPTION"
 msgid "Pen and pencil friendy"
 msgstr ""
 
-#: tfabout.label3.caption
+#: tfabout.progtitle.caption
+msgctxt "TFABOUT.PROGTITLE.CAPTION"
+msgid "MolePad"
+msgstr ""
+
+#: tfabout.progversion.caption
+msgctxt "TFABOUT.PROGVERSION.CAPTION"
 msgid "v0.1a"
 msgstr ""
 
@@ -57,9 +63,9 @@ msgctxt "tmp_main.caption"
 msgid "MolePad"
 msgstr ""
 
-#: tmp_main.cb_encrypt_by_substraction.caption
-msgctxt "TMP_MAIN.CB_ENCRYPT_BY_SUBSTRACTION.CAPTION"
-msgid "Encrypt by substraction"
+#: tmp_main.cb_encipher_by_substraction.caption
+msgctxt "TMP_MAIN.CB_ENCIPHER_BY_SUBSTRACTION.CAPTION"
+msgid "Encipher by substraction"
 msgstr ""
 
 #: tmp_main.codetable_chooser.text
@@ -76,6 +82,10 @@ msgstr ""
 
 #: tmp_main.encodeandencipher.caption
 msgid "Encode and encipher"
+msgstr ""
+
+#: tmp_main.generatepad.caption
+msgid "Generate One-time pad"
 msgstr ""
 
 #: tmp_main.label_codetable.caption
@@ -121,7 +131,7 @@ msgid "Key and encoding"
 msgstr ""
 
 #: tmp_main.tab_result_encoded.caption
-msgid "Encoded result"
+msgid "Encoded"
 msgstr ""
 
 #: tmp_main.tab_result_final.caption
@@ -132,12 +142,12 @@ msgstr ""
 msgid "View table source"
 msgstr ""
 
-#: tview_source.caption
-msgid "View current table source"
+#: tview_source.button_close.caption
+msgctxt "TVIEW_SOURCE.BUTTON_CLOSE.CAPTION"
+msgid "Close"
 msgstr ""
 
-#: tview_source.close_vs.caption
-msgctxt "tview_source.close_vs.caption"
-msgid "Close"
+#: tview_source.caption
+msgid "View current table source"
 msgstr ""
 

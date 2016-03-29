@@ -1,7 +1,7 @@
 object mp_main: Tmp_main
-  Left = 549
+  Left = 645
   Height = 385
-  Top = 109
+  Top = 176
   Width = 389
   BorderStyle = bsSizeToolWin
   Caption = 'MolePad'
@@ -28,9 +28,9 @@ object mp_main: Tmp_main
     Height = 341
     Top = 0
     Width = 389
-    ActivePage = tab_cipher
+    ActivePage = tab_key
     Anchors = [akTop, akLeft, akRight, akBottom]
-    TabIndex = 1
+    TabIndex = 0
     TabOrder = 1
     object tab_key: TTabSheet
       Caption = 'Key and encoding'
@@ -93,19 +93,19 @@ object mp_main: Tmp_main
           ScrollBars = ssAutoVertical
           TabOrder = 0
         end
-        object cb_encrypt_by_substraction: TCheckBox
+        object cb_encipher_by_substraction: TCheckBox
           AnchorSideTop.Control = panel_key_top
           AnchorSideRight.Control = panel_key_top
           AnchorSideRight.Side = asrBottom
-          Left = 205
+          Left = 199
           Height = 22
           Top = 4
-          Width = 170
+          Width = 176
           Anchors = [akTop, akRight]
           BorderSpacing.Top = 4
           BorderSpacing.Right = 8
-          Caption = 'Encrypt by substraction'
-          OnChange = cb_encrypt_by_substractionChange
+          Caption = 'Encipher by substraction'
+          OnChange = cb_encipher_by_substractionChange
           TabOrder = 1
         end
       end
@@ -221,7 +221,6 @@ object mp_main: Tmp_main
             ''
             ''
           )
-          OnChange = memo_input_textChange
           ParentFont = False
           ScrollBars = ssAutoVertical
           TabOrder = 0
@@ -231,8 +230,8 @@ object mp_main: Tmp_main
           Height = 149
           Top = 108
           Width = 367
-          ActivePage = tab_result_encoded
-          TabIndex = 1
+          ActivePage = tab_result_final
+          TabIndex = 0
           TabOrder = 1
           object tab_result_final: TTabSheet
             Caption = 'Result'
@@ -263,7 +262,7 @@ object mp_main: Tmp_main
             end
           end
           object tab_result_encoded: TTabSheet
-            Caption = 'Encoded result'
+            Caption = 'Encoded'
             ClientHeight = 116
             ClientWidth = 361
             object memo_encoded_text: TMemo
@@ -336,7 +335,6 @@ object mp_main: Tmp_main
       Caption = 'File'
       object MenuItem1: TMenuItem
         Action = loadTable
-        OnClick = MenuItem1Click
       end
       object menuitem_exit: TMenuItem
         Caption = 'Exit'
@@ -384,6 +382,10 @@ object mp_main: Tmp_main
     object viewSrc: TAction
       Caption = 'View table source'
       OnExecute = viewSrcExecute
+    end
+    object generatePad: TAction
+      Caption = 'Generate One-time pad'
+      OnExecute = generatePadExecute
     end
   end
 end

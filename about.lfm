@@ -1,7 +1,7 @@
 object Fabout: TFabout
-  Left = 901
+  Left = 1084
   Height = 279
-  Top = 285
+  Top = 177
   Width = 320
   AutoSize = True
   BorderStyle = bsDialog
@@ -11,9 +11,9 @@ object Fabout: TFabout
   ClientWidth = 320
   Position = poMainFormCenter
   LCLVersion = '1.6.0.4'
-  object Label1: TLabel
+  object ProgTitle: TLabel
     AnchorSideLeft.Control = Owner
-    AnchorSideTop.Control = Image1
+    AnchorSideTop.Control = ProgIcon
     AnchorSideTop.Side = asrBottom
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
@@ -31,9 +31,9 @@ object Fabout: TFabout
     ParentColor = False
     ParentFont = False
   end
-  object Label2: TLabel
+  object ProgDescription: TLabel
     AnchorSideLeft.Control = Owner
-    AnchorSideTop.Control = Label1
+    AnchorSideTop.Control = ProgTitle
     AnchorSideTop.Side = asrBottom
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
@@ -48,10 +48,10 @@ object Fabout: TFabout
     Caption = 'Pen and pencil friendy'#10'one-time-pad encryption tool'
     ParentColor = False
   end
-  object Button1: TButton
-    AnchorSideLeft.Control = Label1
+  object Button_close: TButton
+    AnchorSideLeft.Control = ProgTitle
     AnchorSideLeft.Side = asrCenter
-    AnchorSideTop.Control = Label3
+    AnchorSideTop.Control = ProgVersion
     AnchorSideTop.Side = asrBottom
     Left = 123
     Height = 25
@@ -60,10 +60,10 @@ object Fabout: TFabout
     BorderSpacing.Top = 16
     BorderSpacing.Around = 16
     Caption = 'Close'
-    OnClick = Button1Click
+    OnClick = Button_closeClick
     TabOrder = 0
   end
-  object Image1: TImage
+  object ProgIcon: TImage
     AnchorSideLeft.Control = Owner
     AnchorSideLeft.Side = asrCenter
     AnchorSideTop.Control = Owner
@@ -238,9 +238,9 @@ object Fabout: TFabout
       38D30000000049454E44AE426082
     }
   end
-  object Label3: TLabel
+  object ProgVersion: TLabel
     AnchorSideLeft.Control = Owner
-    AnchorSideTop.Control = Label2
+    AnchorSideTop.Control = ProgDescription
     AnchorSideTop.Side = asrBottom
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
