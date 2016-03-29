@@ -1,0 +1,179 @@
+object pad_gen: Tpad_gen
+  Left = 606
+  Height = 240
+  Top = 143
+  Width = 320
+  AutoSize = True
+  Caption = 'pad_gen'
+  ClientHeight = 240
+  ClientWidth = 320
+  LCLVersion = '1.6.0.4'
+  object padgen_label: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 15
+    Height = 23
+    Top = 15
+    Width = 290
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 15
+    BorderSpacing.Top = 15
+    BorderSpacing.Right = 15
+    Caption = 'One-time pad generator'
+    Font.Height = -19
+    ParentColor = False
+    ParentFont = False
+  end
+  object padgen_second_label: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = padgen_label
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 15
+    Height = 30
+    Top = 38
+    Width = 290
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 15
+    BorderSpacing.Right = 15
+    Caption = 'At this time, it''s buggy and can freeze your computer for a while.'
+    ParentColor = False
+    WordWrap = True
+  end
+  object padgen_generate: TButton
+    AnchorSideLeft.Control = Owner
+    AnchorSideLeft.Side = asrCenter
+    AnchorSideTop.Control = panel_pages
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    Left = 182
+    Height = 27
+    Top = 156
+    Width = 123
+    Anchors = [akTop, akRight]
+    AutoSize = True
+    BorderSpacing.Top = 8
+    BorderSpacing.Right = 15
+    BorderSpacing.Bottom = 15
+    Caption = 'Generate and save'
+    OnClick = padgen_generateClick
+    TabOrder = 0
+  end
+  object padgen_lines_panel: TPanel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = padgen_second_label
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 15
+    Height = 27
+    Top = 88
+    Width = 290
+    Anchors = [akTop, akLeft, akRight]
+    AutoSize = True
+    BorderSpacing.Left = 15
+    BorderSpacing.Top = 20
+    BorderSpacing.Right = 15
+    BevelOuter = bvNone
+    ClientHeight = 27
+    ClientWidth = 290
+    Font.Height = -13
+    ParentFont = False
+    TabOrder = 1
+    object num_lines: TSpinEdit
+      AnchorSideTop.Control = padgen_lines_panel
+      AnchorSideRight.Control = padgen_lines_panel
+      AnchorSideRight.Side = asrBottom
+      Left = 235
+      Height = 27
+      Top = 0
+      Width = 55
+      Anchors = [akTop, akRight]
+      MaxValue = 1000
+      OnChange = num_linesChange
+      TabOrder = 0
+      Value = 15
+    end
+    object lines_label: TLabel
+      AnchorSideLeft.Control = padgen_lines_panel
+      AnchorSideTop.Control = padgen_lines_panel
+      AnchorSideBottom.Control = num_lines
+      AnchorSideBottom.Side = asrCenter
+      Left = 0
+      Height = 17
+      Top = 0
+      Width = 99
+      Caption = 'Lines per page:'
+      ParentColor = False
+    end
+  end
+  object panel_pages: TPanel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = padgen_lines_panel
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 15
+    Height = 27
+    Top = 121
+    Width = 290
+    Anchors = [akTop, akLeft, akRight]
+    AutoSize = True
+    BorderSpacing.Left = 15
+    BorderSpacing.Top = 6
+    BorderSpacing.Right = 15
+    BevelOuter = bvNone
+    ClientHeight = 27
+    ClientWidth = 290
+    Font.Height = -13
+    ParentFont = False
+    TabOrder = 2
+    object num_pages: TSpinEdit
+      AnchorSideTop.Control = panel_pages
+      AnchorSideRight.Control = panel_pages
+      AnchorSideRight.Side = asrBottom
+      Left = 235
+      Height = 27
+      Top = 0
+      Width = 55
+      Anchors = [akTop, akRight]
+      MaxValue = 99999
+      TabOrder = 0
+      Value = 100
+    end
+    object label_pages: TLabel
+      AnchorSideLeft.Control = panel_pages
+      AnchorSideTop.Control = panel_pages
+      AnchorSideBottom.Control = num_pages
+      AnchorSideBottom.Side = asrCenter
+      Left = 0
+      Height = 17
+      Top = 0
+      Width = 116
+      Caption = 'Number of pages:'
+      ParentColor = False
+    end
+  end
+  object padgenClose: TButton
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = padgen_generate
+    AnchorSideTop.Side = asrCenter
+    Left = 15
+    Height = 25
+    Top = 157
+    Width = 75
+    BorderSpacing.Left = 15
+    Caption = 'Close'
+    OnClick = padgenCloseClick
+    TabOrder = 3
+  end
+  object pad_save: TSaveDialog
+    left = 257
+    top = 179
+  end
+end

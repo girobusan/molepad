@@ -142,6 +142,31 @@ msgstr ""
 msgid "View table source"
 msgstr ""
 
+#: tpad_gen.caption
+msgid "pad_gen"
+msgstr ""
+
+#: tpad_gen.label_pages.caption
+msgid "Number of pages:"
+msgstr ""
+
+#: tpad_gen.lines_label.caption
+msgid "Lines per page:"
+msgstr ""
+
+#: tpad_gen.padgenclose.caption
+msgctxt "TPAD_GEN.PADGENCLOSE.CAPTION"
+msgid "Close"
+msgstr ""
+
+#: tpad_gen.padgen_generate.caption
+msgid "Generate and save"
+msgstr ""
+
+#: tpad_gen.padgen_label.caption
+msgid "One-time pad generator"
+msgstr ""
+
 #: tview_source.button_close.caption
 msgctxt "TVIEW_SOURCE.BUTTON_CLOSE.CAPTION"
 msgid "Close"

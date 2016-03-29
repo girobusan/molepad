@@ -9,7 +9,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
-  OTPcipher, ucheckerboard, uspybeauty, viewsource, about,
+  OTPcipher, ucheckerboard, uspybeauty, viewsource, about, ufpadgen,
   ComCtrls, StdCtrls, ExtCtrls, ActnList;
 
 var
@@ -189,15 +189,18 @@ end;
 
 procedure Tmp_main.generatePadExecute(Sender: TObject);
 begin
-  ShowMessage(ssNotImplemented)
+  //ShowMessage(ssNotImplemented)
+  pad_gen.Show;
 end;
 
 procedure Tmp_main.FormCreate(Sender: TObject);
 var
   I: integer;
+  {$IFDEF UNIX}
   MI:TMenuItem;
+  {$ENDIF}
 begin
-  ///////////////////STARTUP CLEANUP//////////////////
+  //STARTUP CLEANUP
   //for mac
   {$IFDEF DARWIN}
   begin
@@ -280,9 +283,8 @@ begin
     exit;
   end;
   //encode
-  //ShowMessage(curTable^.Title);
+
   encoded := curTable^.Encode(input);
-  //ShowMessage(encoded);
   mp_main.memo_encoded_text.Lines.Text := SpyGrouping(encoded);
   //encrypt
   mp_main.memo_final_result.Lines.Text :=
