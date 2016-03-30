@@ -163,7 +163,7 @@ begin
     end;//end BIG CASE
   end;//end reading loop
   //test
-  writeln('It is codetable, named "' + title + '", descripted as "' + description + '"');
+  //writeln('It is codetable, named "' + title + '", descripted as "' + description + '"');
 
 end;
 
