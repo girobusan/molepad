@@ -17,6 +17,7 @@ Features
 --------
 
 1. Many encoding tables included, plus ability to load custom one from file
+1. View code table source 
 2. Shows intermediate result of encryption/decryption process
 3. Pen-and-pencil friendly algorithm, tested and approved by generations of spies
 4. Generation of one-time pads (using /dev/random), preliminary implementation
