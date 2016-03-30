@@ -1,7 +1,7 @@
 object mp_main: Tmp_main
-  Left = 644
+  Left = 643
   Height = 385
-  Top = 156
+  Top = 136
   Width = 389
   BorderStyle = bsSizeToolWin
   Caption = 'MolePad'

@@ -9,6 +9,9 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
+  {$IFDEF WINDOWS}
+  windows,
+  {$ENDIF}
   OTPcipher, ucheckerboard, uspybeauty, viewsource, about, ufpadgen,
   ComCtrls, StdCtrls, ExtCtrls, ActnList;
 
