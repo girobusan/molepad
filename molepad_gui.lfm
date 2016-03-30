@@ -154,9 +154,7 @@ object mp_main: Tmp_main
             'Table-2'
           )
           OnChange = codetable_chooserChange
-          Style = csSimple
           TabOrder = 0
-          Text = 'Choose your codetable →'
         end
         object codetable_description: TLabel
           AnchorSideLeft.Control = panel_key_bottom

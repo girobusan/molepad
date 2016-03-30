@@ -68,10 +68,6 @@ msgctxt "TMP_MAIN.CB_ENCIPHER_BY_SUBSTRACTION.CAPTION"
 msgid "Encipher by substraction"
 msgstr ""
 
-#: tmp_main.codetable_chooser.text
-msgid "Choose your codetable →"
-msgstr ""
-
 #: tmp_main.codetable_description.caption
 msgid "Please, choose the codetable from list, or choose \"load from file\" to load the custom one."
 msgstr ""
