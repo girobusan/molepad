@@ -180,3 +180,15 @@ msgstr ""
 msgid "View current table source"
 msgstr ""
 
+#: ufpadgen.sscantmakepad
+msgid "Can not generate the pad."
+msgstr ""
+
+#: ufpadgen.ssfileoops
+msgid "Cant' write to file."
+msgstr ""
+
+#: ufpadgen.ssready
+msgid "OTP saved."
+msgstr ""
+

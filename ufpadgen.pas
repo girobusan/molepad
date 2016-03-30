@@ -38,6 +38,11 @@ type
 var
   pad_gen: Tpad_gen;
 
+resourcestring
+  ssReady='OTP saved.';
+  ssFileOops='Cant'' write to file.';
+  ssCantMakePad = 'Can not generate the pad.';
+
 implementation
 
 {$R *.lfm}
@@ -55,17 +60,21 @@ procedure Tpad_gen.padgen_generateClick(Sender: TObject);
 var
   fname : string;
   fout  : TextFile;
+  pad   : string;
 begin
   if pad_save.Execute then
     begin
     fname:=pad_save.Filename;
     AssignFile(fout,fname);
     Rewrite(fout);
-    Writeln( fout, CreatePad(num_pages.Value,num_lines.Value)); //FIX NEEDED
+    pad := CreatePad(num_pages.Value,num_lines.Value);
+    if pad<>'' then Writeln( fout ) //FIX NEEDED
+    else ShowMessage(ssCantMakePad);
     CloseFile(fout);
+    ShowMessage(ssReady);
     Close;
     end
-  else ShowMessage('Can''t write to file');
+  else ShowMessage(ssFileOops);
   end;
 
 

@@ -85,6 +85,7 @@
         <Filename Value="ufpadgen.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="pad_gen"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
       </Unit8>
     </Units>

@@ -1,7 +1,7 @@
 object pad_gen: Tpad_gen
-  Left = 606
+  Left = 679
   Height = 240
-  Top = 143
+  Top = 247
   Width = 320
   AutoSize = True
   Caption = 'OTP generator'
@@ -162,11 +162,17 @@ object pad_gen: Tpad_gen
     AnchorSideLeft.Control = Owner
     AnchorSideTop.Control = padgen_generate
     AnchorSideTop.Side = asrCenter
-    Left = 15
-    Height = 25
-    Top = 157
-    Width = 75
+    AnchorSideRight.Control = padgen_generate
+    AnchorSideBottom.Control = padgen_generate
+    AnchorSideBottom.Side = asrBottom
+    Left = 133
+    Height = 27
+    Top = 156
+    Width = 41
+    Anchors = [akRight, akBottom]
+    AutoSize = True
     BorderSpacing.Left = 15
+    BorderSpacing.Right = 8
     Caption = 'Close'
     OnClick = padgenCloseClick
     TabOrder = 3
