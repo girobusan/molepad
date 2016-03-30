@@ -12,9 +12,9 @@ interface
 
 uses
   {$ifdef unix}
-  cwstring, lazUTF8, //for right Unicode handling on *nix
+  cwstring,  //for right Unicode handling on *nix
   {$endif}
-  Classes, SysUtils, contnrs, uspybeauty, Dialogs;
+  Classes, SysUtils, contnrs, lazUTF8, uspybeauty, Dialogs;
 
 type
   TCodeTable = object
