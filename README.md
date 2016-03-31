@@ -2,7 +2,9 @@
 Mole Pad
 ========
 
-Pen-and-pencil friendly one-time-pad cipher tool. Includes integrated staggered checkerboard encoder/decoder. Currently in alpha stage. 
+Pen-and-pencil friendly one-time-pad cipher tool. Includes integrated staggered checkerboard encoder/decoder. 
+
+Beta release available for Linux, Mac OS and Windows (a bit quirky, but works).
 
 ![Screenshot](media/molepad_alpha_screen.png)
 

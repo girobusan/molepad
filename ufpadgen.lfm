@@ -1,7 +1,7 @@
 object pad_gen: Tpad_gen
-  Left = 679
+  Left = 776
   Height = 240
-  Top = 247
+  Top = 333
   Width = 320
   AutoSize = True
   Caption = 'OTP generator'
@@ -14,7 +14,7 @@ object pad_gen: Tpad_gen
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
     Left = 15
-    Height = 23
+    Height = 22
     Top = 15
     Width = 290
     Anchors = [akTop, akLeft, akRight]
@@ -33,8 +33,8 @@ object pad_gen: Tpad_gen
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
     Left = 15
-    Height = 30
-    Top = 38
+    Height = 32
+    Top = 37
     Width = 290
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Left = 15
@@ -51,10 +51,10 @@ object pad_gen: Tpad_gen
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = Owner
-    Left = 182
-    Height = 27
-    Top = 156
-    Width = 123
+    Left = 165
+    Height = 20
+    Top = 135
+    Width = 140
     Anchors = [akTop, akRight]
     AutoSize = True
     BorderSpacing.Top = 8
@@ -71,8 +71,8 @@ object pad_gen: Tpad_gen
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
     Left = 15
-    Height = 27
-    Top = 88
+    Height = 16
+    Top = 89
     Width = 290
     Anchors = [akTop, akLeft, akRight]
     AutoSize = True
@@ -80,7 +80,7 @@ object pad_gen: Tpad_gen
     BorderSpacing.Top = 20
     BorderSpacing.Right = 15
     BevelOuter = bvNone
-    ClientHeight = 27
+    ClientHeight = 16
     ClientWidth = 290
     Font.Height = -13
     ParentFont = False
@@ -90,7 +90,7 @@ object pad_gen: Tpad_gen
       AnchorSideRight.Control = padgen_lines_panel
       AnchorSideRight.Side = asrBottom
       Left = 235
-      Height = 27
+      Height = 16
       Top = 0
       Width = 55
       Anchors = [akTop, akRight]
@@ -104,9 +104,9 @@ object pad_gen: Tpad_gen
       AnchorSideTop.Side = asrCenter
       AnchorSideBottom.Side = asrCenter
       Left = 0
-      Height = 17
-      Top = 5
-      Width = 99
+      Height = 16
+      Top = 0
+      Width = 96
       Caption = 'Lines per page:'
       ParentColor = False
     end
@@ -118,8 +118,8 @@ object pad_gen: Tpad_gen
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
     Left = 15
-    Height = 27
-    Top = 121
+    Height = 16
+    Top = 111
     Width = 290
     Anchors = [akTop, akLeft, akRight]
     AutoSize = True
@@ -127,7 +127,7 @@ object pad_gen: Tpad_gen
     BorderSpacing.Top = 6
     BorderSpacing.Right = 15
     BevelOuter = bvNone
-    ClientHeight = 27
+    ClientHeight = 16
     ClientWidth = 290
     Font.Height = -13
     ParentFont = False
@@ -137,7 +137,7 @@ object pad_gen: Tpad_gen
       AnchorSideRight.Control = panel_pages
       AnchorSideRight.Side = asrBottom
       Left = 235
-      Height = 27
+      Height = 16
       Top = 0
       Width = 55
       Anchors = [akTop, akRight]
@@ -151,9 +151,9 @@ object pad_gen: Tpad_gen
       AnchorSideTop.Side = asrCenter
       AnchorSideBottom.Side = asrCenter
       Left = 0
-      Height = 17
-      Top = 5
-      Width = 116
+      Height = 16
+      Top = 0
+      Width = 113
       Caption = 'Number of pages:'
       ParentColor = False
     end
@@ -165,10 +165,10 @@ object pad_gen: Tpad_gen
     AnchorSideRight.Control = padgen_generate
     AnchorSideBottom.Control = padgen_generate
     AnchorSideBottom.Side = asrBottom
-    Left = 133
-    Height = 27
-    Top = 156
-    Width = 41
+    Left = 87
+    Height = 20
+    Top = 135
+    Width = 70
     Anchors = [akRight, akBottom]
     AutoSize = True
     BorderSpacing.Left = 15
