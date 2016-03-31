@@ -42,14 +42,14 @@ end;
 
 function Cipher(src: ansistring; key: ansistring; encipher: boolean): ansistring;
 var
-  i : integer;        //loop counter
-  sn: integer;        //current source text digit
-  kn: integer;        //current key digit
-  r : ansistring = ''; //result
-  eflag: boolean;
+  i: integer;         //loop counter
+  sn: integer;         //current source text digit
+  kn: integer;         //current key digit
+  r: ansistring = ''; //result
+  eflag: boolean;         //substraction flag
 begin
 
-  eflag := not (encipher xor encipherByAddition);
+  eflag := encipher xor encipherByAddition;
   src := extractNums(src);
   key := extractNums(key);
 
@@ -75,13 +75,13 @@ begin
     end;
     if eflag then
     begin
-      //ShowMessage('Plus');
-      r := r + IntToStr((sn + kn) mod 10);
+      //ShowMessage('Minus');
+      r := r + IntToStr(mod10minus(sn, kn));
     end
     else
     begin
-      //ShowMessage('Minus');
-      r := r + IntToStr(mod10minus(sn, kn));
+      //ShowMessage('Plus');
+      r := r + IntToStr((sn + kn) mod 10);
     end;
   end;
   Cipher := r;

@@ -1,6 +1,10 @@
 msgid "(Alpha)(Alpha)(Alpha)(Alpha)(Alpha)(Alpha)(Alpha)(Alpha)(Alpha)(Alpha)one-time-pad encryption toolone-time-pad encryption toolone-time-pad encryption toolone-time-pad encryption toolone-time-pad encryption toolone-time-pad encryption toolone-time-pad encryption toolone-time-pad encryption toolone-time-pad encryption tool"
 msgstr "Content-Type: text/plain; charset=UTF-8"
 
+#: molepad_gui.ssbadindicator
+msgid "Indicator groups do not match."
+msgstr ""
+
 #: molepad_gui.sscodewarning
 msgid "Warning! This text is NOT enciphered."
 msgstr ""

@@ -199,7 +199,8 @@ begin
     //ShowMessage('cp1 ' + cp1enc[b]);
     //ShowMessage('cp2 ' + cp2enc[b]);
     //if symnol is unknown?
-    if (pos(b, digits) = 0) and (cp1enc[b] = '') and (cp2enc[b] = '') and not (b = ' ') then
+    if (pos(b, digits) = 0) and (cp1enc[b] = '') and (cp2enc[b] = '') and
+      not (b = ' ') then
     begin
       //ShowMessage('Unknown symbol '+b);
       r := r + '';
@@ -316,7 +317,8 @@ begin
     end;//digits block ended here
 
     //SPECIAL SYMBOLS
-    if (cp1dec[buff] <> '') and (cp1dec[buff][1] = '!') and (length(cp1dec[buff]) > 1) then
+    if (cp1dec[buff] <> '') and (cp1dec[buff][1] = '!') and
+      (length(cp1dec[buff]) > 1) then
     begin
       //writeln('it''s special "' + cp1dec[buff] +'"');
       case cp1dec[buff] of

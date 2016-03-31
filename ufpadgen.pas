@@ -7,7 +7,6 @@ interface
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
   Spin, ExtCtrls,
-
   padgenlib;
 
 type
@@ -39,8 +38,8 @@ var
   pad_gen: Tpad_gen;
 
 resourcestring
-  ssReady='OTP saved.';
-  ssFileOops='Cant'' write to file.';
+  ssReady = 'OTP saved.';
+  ssFileOops = 'Cant'' write to file.';
   ssCantMakePad = 'Can not generate the pad.';
 
 implementation
@@ -58,25 +57,27 @@ end;
 
 procedure Tpad_gen.padgen_generateClick(Sender: TObject);
 var
-  fname : string;
-  fout  : TextFile;
-  pad   : string;
+  fname: string;
+  fout: TextFile;
+  pad: string;
 begin
   if pad_save.Execute then
-    begin
-    fname:=pad_save.Filename;
-    AssignFile(fout,fname);
+  begin
+    fname := pad_save.Filename;
+    AssignFile(fout, fname);
     Rewrite(fout);
-    pad := CreatePad(num_pages.Value,num_lines.Value);
-    if pad<>'' then Writeln( fout ) //FIX NEEDED
-    else ShowMessage(ssCantMakePad);
+    pad := CreatePad(num_pages.Value, num_lines.Value);
+    if pad <> '' then
+      Writeln(fout) //FIX NEEDED
+    else
+      ShowMessage(ssCantMakePad);
     CloseFile(fout);
     ShowMessage(ssReady);
     Close;
-    end
-  else ShowMessage(ssFileOops);
-  end;
+  end
+  else
+    ShowMessage(ssFileOops);
+end;
 
 
 end.
-

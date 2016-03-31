@@ -10,7 +10,7 @@ interface
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
   {$IFDEF WINDOWS}
-  windows,
+  Windows,
   {$ENDIF}
   OTPcipher, ucheckerboard, uspybeauty, viewsource, about, ufpadgen,
   ComCtrls, StdCtrls, ExtCtrls, ActnList;
@@ -84,8 +84,6 @@ type
     procedure codetable_chooserChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
 
-
-
     procedure menuitem_exitClick(Sender: TObject);
     procedure ShowInStatus(s: string);
 
@@ -95,22 +93,26 @@ type
     { public declarations }
   end;
 
+
+
 var
   mp_main: Tmp_main;
 
 resourcestring
 
-  ssLoadCodetable   = 'Load custom table from file...';
-  ssUseCodetable    = 'Use the ';
+  ssLoadCodetable = 'Load custom table from file...';
+  ssUseCodetable = 'Use the ';
   ssUseCodetableFin = ' table.';
-  ssCodeWarning     = 'Warning! This text is NOT enciphered.';
-  ssNoKey           = 'No valid key found.';
-  ssNoTable         = 'No code table selected.';
-  ssNoSource        = 'No source text entered.';
-  ssNotImplemented  = 'Not implemented yet.';
+  ssCodeWarning = 'Warning! This text is NOT enciphered.';
+  ssNoKey = 'No valid key found.';
+  ssNoTable = 'No code table selected.';
+  ssNoSource = 'No source text entered.';
+  ssNotImplemented = 'Not implemented yet.';
+  ssBadIndicator = 'Indicator groups do not match.';
 
 procedure performEncipher();
 procedure performDecipher();
+function CheckCipher(): string;
 
 implementation
 
@@ -192,7 +194,6 @@ end;
 
 procedure Tmp_main.generatePadExecute(Sender: TObject);
 begin
-  //ShowMessage(ssNotImplemented)
   pad_gen.Show;
 end;
 
@@ -200,7 +201,7 @@ procedure Tmp_main.FormCreate(Sender: TObject);
 var
   I: integer;
   {$IFDEF UNIX}
-  MI:TMenuItem;
+  MI: TMenuItem;
   {$ENDIF}
 begin
   //STARTUP CLEANUP
@@ -216,9 +217,9 @@ begin
    {$ENDIF}
   //Add menu item for OTP generator
   {$IFDEF UNIX}
-   MI:=TMenuItem.Create(MainMenu1);
-   MI.Action:= generatePad;
-   mainMenu1.Items[1].Add(MI);
+  MI := TMenuItem.Create(MainMenu1);
+  MI.Action := generatePad;
+  mainMenu1.Items[1].Add(MI);
    {$ENDIF}
 
   //Set the right tabs
@@ -250,7 +251,30 @@ begin
 
 end;
 
-
+function CheckCipher(): string;
+var
+  otkey: string;
+  err: boolean = False;
+  msg: string = '';
+begin
+  otkey := extractNums(mp_main.memo_key.Lines.Text);
+  if otkey = '' then
+  begin
+    err := True;
+    msg += ssNoKey + ' ';
+  end;
+  if not assigned(curTable) then
+  begin
+    err := True;
+    msg += ssNoTable;
+  end;
+  if err then
+  begin
+    ShowMessage(msg);
+    CheckCipher := '';
+  end;
+  CheckCipher := otkey;
+end;
 
 //encrypt
 procedure performEncipher();
@@ -259,34 +283,21 @@ var
   otkey: string;
   encoded: string;
   indicator: string;
-  //output:string;
 begin
-  //prepare key
-
-  otkey := extractNums(mp_main.memo_key.Lines.Text);
-  ;
+  otkey := CheckCipher;
   if otkey = '' then
-  begin
-    ShowMessage(ssNoKey);
     exit;
-  end;
+  //get indicator
   indicator := copy(otkey, 1, 5);
   otkey := copy(otkey, 6, length(otkey) - 5);
-  //check table
-  if not assigned(curTable) then
-  begin
-    ShowMessage(ssNoTable);
-    exit;
-  end;
   //check source
   input := trim(mp_main.memo_input_text.Lines.Text);
   if input = '' then
   begin
     ShowMessage(ssNoSource);
-    exit;
+    Exit;
   end;
   //encode
-
   encoded := curTable^.Encode(input);
   mp_main.memo_encoded_text.Lines.Text := SpyGrouping(encoded);
   //encrypt
@@ -303,23 +314,14 @@ var
   indicator: string;
   //output:string;
 begin
-  //prepare key
-  otkey := extractNums(mp_main.memo_key.Lines.Text);
+  otkey := CheckCipher;
   if otkey = '' then
-  begin
-    ShowMessage(ssNoKey);
     exit;
-  end;
   indicator := copy(otkey, 1, 5);
   otkey := copy(otkey, 6, length(otkey) - 5);
-  //check table
-  if not assigned(curTable) then
-  begin
-    ShowMessage(ssNoTable);
-    exit;
-  end;
+
   //check source
-  input := trim(mp_main.memo_input_text.Lines.Text);
+  input := extractNums(mp_main.memo_input_text.Lines.Text);
   if input = '' then
   begin
     ShowMessage(ssNoSource);
@@ -329,23 +331,18 @@ begin
   //check indicator
   if (leftstr(input, 5) <> indicator) then
   begin
-    ShowMessage('Indicator group do not match the key.');
+    ShowMessage(ssBadIndicator);
+    Exit;
   end;
   encoded := Cipher(copy(input, 6, length(input) - 5), otkey, False);
   mp_main.memo_encoded_text.Lines.Text := SpyGrouping(encoded);
   //decode
   mp_main.memo_final_result.Lines.Text := curTable^.Decode(encoded);
-  // Cipher(encoded, otkey, True);
-
 end;
-
-
 
 procedure Tmp_main.menuitem_exitClick(Sender: TObject);
 begin
   Halt(0);
 end;
-
-
 
 end.
