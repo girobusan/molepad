@@ -34,3 +34,5 @@ lib/
 *.ora
 *.ora~
 binary/
+icon/
+
