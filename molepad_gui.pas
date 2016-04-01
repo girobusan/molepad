@@ -75,6 +75,9 @@ type
     tab_cipher: TTabSheet;
     procedure generatePadExecute(Sender: TObject);
     procedure menu_help_aboutClick(Sender: TObject);
+    procedure tabs_resultMouseEnter(Sender: TObject);
+    procedure tab_result_encodedHide(Sender: TObject);
+    procedure tab_result_encodedShow(Sender: TObject);
 
     procedure viewSrcExecute(Sender: TObject);
     procedure DecipherAndDecodeExecute(Sender: TObject);
@@ -86,6 +89,7 @@ type
 
     procedure menuitem_exitClick(Sender: TObject);
     procedure ShowInStatus(s: string);
+    procedure ClearStatus();
 
   private
     { private declarations }
@@ -121,7 +125,12 @@ implementation
 { Tmp_main }
 procedure Tmp_main.ShowInStatus(s: string);
 begin
-  StatusBar.SimpleText := s;
+  StatusBar.Panels[0].Text := s;
+end;
+
+procedure Tmp_main.ClearStatus();
+begin
+  StatusBar.Panels[0].Text := '';
 end;
 
 
@@ -190,6 +199,21 @@ end;
 procedure Tmp_main.menu_help_aboutClick(Sender: TObject);
 begin
   Fabout.ShowModal;
+end;
+
+procedure Tmp_main.tabs_resultMouseEnter(Sender: TObject);
+begin
+  ShowInStatus(ssCodeWarning);
+end;
+
+procedure Tmp_main.tab_result_encodedHide(Sender: TObject);
+begin
+  ClearStatus;
+end;
+
+procedure Tmp_main.tab_result_encodedShow(Sender: TObject);
+begin
+  ShowInStatus(ssCodeWarning);
 end;
 
 procedure Tmp_main.generatePadExecute(Sender: TObject);

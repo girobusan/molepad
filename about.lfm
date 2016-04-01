@@ -1,7 +1,7 @@
 object Fabout: TFabout
-  Left = 1084
+  Left = 1041
   Height = 279
-  Top = 177
+  Top = 156
   Width = 320
   AutoSize = True
   BorderStyle = bsDialog
@@ -250,7 +250,7 @@ object Fabout: TFabout
     Width = 316
     Alignment = taCenter
     Anchors = [akTop, akLeft, akRight]
-    Caption = 'v0.1a'
+    Caption = 'v0.2b'
     Font.Height = -11
     Font.Name = 'Sans'
     ParentColor = False
