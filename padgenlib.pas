@@ -14,43 +14,31 @@ function CreatePad(pages: integer = 10; linespage: integer = 20): ansistring;
 
 implementation
 
-function getNums(b: T5bytes; n: integer = 5): ansistring;
+function getNums(b: T5bytes): ansistring;
 var
   i: integer;
-  tmpi: integer;
   ns: string = '';
 begin
-  for i := 0 to n - 1 do
+  for i := 0 to (length(b)-1) do
   begin
-    tmpi := b[i] mod 10;
-    ns += IntToStr(tmpi);
+    ns += IntToStr( b[i] mod 10 );
   end;
-  getNums := ns;
+  Result := ns;
 end;
 
 function CreatePad(pages: integer = 10; linespage: integer = 20): ansistring;
 var
-  AProcess: TProcess;
+
   Buffer: array of byte; //array[1..BUF_SIZE]  of byte;
   sbuffer: byte = 0; //small buffer
   Counter: integer;
-  Exename: string;
-  padStr: string='';
+  devrnd: file;
+  padStr: string = '';
   p: integer;
 begin
-  Exename := FindDefaultExecutablePath('cat');
-  if Exename = '' then
-  begin
-    CreatePad := '';
-    Exit;
-  end;
-
-  //run
-  AProcess := TProcess.Create(nil);
-  AProcess.Executable := Exename;
-  AProcess.Parameters.Add('/dev/random');
-  AProcess.Options := [poUsePipes];
-  AProcess.Execute;
+  //ShowMessage('Entered');
+  AssignFile(devrnd, '/dev/random');
+  Reset(devrnd, sizeOf(byte));
 
   for  p := 1 to pages do
   begin
@@ -62,7 +50,7 @@ begin
       //read five bytes
       SetLength(Buffer, 0);
       repeat
-        AProcess.Output.Read(sBuffer, 1); //read one byte
+        Blockread(devrnd, sBuffer, 1); //read one byte
         if sBuffer > 250 then
           Continue;
 
@@ -70,20 +58,17 @@ begin
         Buffer[Length(Buffer) - 1] := sBuffer;
       until Length(buffer) = 5;
 
-      //write( '(' + IntToStr(counter) + ')');
       if (counter mod 5 = 0) then
-        padStr += getNums(Buffer, Length(Buffer)) + sLineBreak
+        padStr += getNums(Buffer) + sLineBreak
       else
-        padStr += getNums(Buffer, Length(Buffer)) + ' ';
+        padStr += getNums(Buffer) + ' ';
     until counter = linespage * 5;  // Stop
 
     ////////////PAGE READY///////////////////////
   end;
   padstr += '-----------------------------';
-  AProcess.Terminate(0);
-  AProcess.Free;
+  //ShowMessage(copy(padstr, 1, 20));
   CreatePad := padStr;
-
 end;
 
 end.

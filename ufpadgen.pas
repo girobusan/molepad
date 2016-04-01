@@ -68,12 +68,16 @@ begin
     Rewrite(fout);
     pad := CreatePad(num_pages.Value, num_lines.Value);
     if pad <> '' then
-      Writeln(fout) //FIX NEEDED
+      Write(fout, pad) //FIX NEEDED
     else
+      begin
       ShowMessage(ssCantMakePad);
+      CloseFile(fout);
+      Exit
+      end;
     CloseFile(fout);
     ShowMessage(ssReady);
-    Close;
+    Close
   end
   else
     ShowMessage(ssFileOops);

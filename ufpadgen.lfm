@@ -1,7 +1,7 @@
 object pad_gen: Tpad_gen
-  Left = 301
+  Left = 300
   Height = 240
-  Top = 201
+  Top = 181
   Width = 320
   AutoSize = True
   Caption = 'OTP generator'

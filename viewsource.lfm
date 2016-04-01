@@ -17,6 +17,8 @@ object view_source: Tview_source
     Caption = 'Panel1'
     ClientHeight = 447
     ClientWidth = 445
+    Color = clBackground
+    ParentColor = False
     TabOrder = 0
     object memo_src: TMemo
       AnchorSideLeft.Control = Owner
@@ -25,13 +27,14 @@ object view_source: Tview_source
       AnchorSideRight.Side = asrBottom
       AnchorSideBottom.Control = button_close
       Left = 8
-      Height = 395
+      Height = 402
       Top = 8
       Width = 428
       Anchors = [akTop, akLeft, akRight, akBottom]
       BorderSpacing.Around = 8
       Lines.Strings = (
         'memo_src'
+        ''
       )
       ScrollBars = ssAutoVertical
       TabOrder = 0
@@ -43,10 +46,10 @@ object view_source: Tview_source
       AnchorSideRight.Side = asrBottom
       AnchorSideBottom.Control = Panel1
       AnchorSideBottom.Side = asrBottom
-      Left = 395
-      Height = 27
-      Top = 411
-      Width = 41
+      Left = 366
+      Height = 20
+      Top = 418
+      Width = 70
       Anchors = [akRight, akBottom]
       AutoSize = True
       BorderSpacing.Right = 8
