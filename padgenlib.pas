@@ -68,7 +68,7 @@ begin
   end;
   padstr += '-----------------------------';
   //ShowMessage(copy(padstr, 1, 20));
-  CreatePad := padStr;
+  Result := padStr;
 end;
 
 end.
