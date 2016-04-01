@@ -1,5 +1,5 @@
 title
-	SONET-C
+	SONET-C (Russian and English)
 
 description
 

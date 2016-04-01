@@ -10,7 +10,7 @@ msgid "Warning! This text is NOT enciphered."
 msgstr ""
 
 #: molepad_gui.ssloadcodetable
-msgid "Load custom table from file..."
+msgid "Custom"
 msgstr ""
 
 #: molepad_gui.ssnokey
@@ -27,14 +27,6 @@ msgstr ""
 
 #: molepad_gui.ssnotimplemented
 msgid "Not implemented yet."
-msgstr ""
-
-#: molepad_gui.ssusecodetable
-msgid "Use the "
-msgstr ""
-
-#: molepad_gui.ssusecodetablefin
-msgid " table."
 msgstr ""
 
 #: tfabout.button_close.caption

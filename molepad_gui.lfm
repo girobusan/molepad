@@ -1,7 +1,7 @@
 object mp_main: Tmp_main
-  Left = 641
+  Left = 640
   Height = 385
-  Top = 96
+  Top = 76
   Width = 389
   BorderStyle = bsSizeToolWin
   Caption = 'MolePad'
@@ -154,6 +154,7 @@ object mp_main: Tmp_main
             'Table-2'
           )
           OnChange = codetable_chooserChange
+          Style = csDropDownList
           TabOrder = 0
         end
         object codetable_description: TLabel

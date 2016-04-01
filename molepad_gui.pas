@@ -100,9 +100,9 @@ var
 
 resourcestring
 
-  ssLoadCodetable = 'Load custom table from file...';
-  ssUseCodetable = 'Use the ';
-  ssUseCodetableFin = ' table.';
+  ssLoadCodetable = 'Custom...';
+  //ssUseCodetable = 'Use the ';
+  //ssUseCodetableFin = ' table.';
   ssCodeWarning = 'Warning! This text is NOT enciphered.';
   ssNoKey = 'No valid key found.';
   ssNoTable = 'No code table selected.';
@@ -137,7 +137,7 @@ begin
     curTable := @tables[codetable_chooser.ItemIndex];
   end;
   codetable_description.Caption := curTable^.description;
-  codetable_chooser.Text := curTable^.Title; //FIX
+  //codetable_chooser.Text := curTable^.Title; //FIX
 end;
 
 procedure Tmp_main.cb_encipher_by_substractionChange(Sender: TObject);
@@ -245,7 +245,7 @@ begin
   codetable_chooser.Items.Clear;
   for i := 0 to length(tables) - 1 do
   begin
-    codetable_chooser.Items.Add(ssUseCodetable + tables[i].title + ssUseCodetableFin);
+    codetable_chooser.Items.Add(tables[i].title);
   end;
   codetable_chooser.Items.Add(ssLoadCodetable);
 

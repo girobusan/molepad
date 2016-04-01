@@ -1,5 +1,5 @@
 title
-	SONET-L
+	SONET-L (English and Russian)
 
 description
 
