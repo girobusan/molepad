@@ -1,47 +1,59 @@
 object view_source: Tview_source
-  Left = 1082
-  Height = 401
-  Top = 484
+  Left = 849
+  Height = 447
+  Top = 216
   Width = 445
   Caption = 'View current table source'
-  ClientHeight = 401
+  ClientHeight = 447
   ClientWidth = 445
   Position = poMainFormCenter
   LCLVersion = '1.6.0.4'
-  object memo_src: TMemo
-    AnchorSideLeft.Control = Owner
-    AnchorSideTop.Control = Owner
-    AnchorSideRight.Control = Owner
-    AnchorSideRight.Side = asrBottom
-    AnchorSideBottom.Control = button_close
-    Left = 8
-    Height = 350
-    Top = 8
-    Width = 429
-    Anchors = [akTop, akLeft, akRight, akBottom]
-    BorderSpacing.Around = 8
-    Lines.Strings = (
-      'memo_src'
-    )
-    ScrollBars = ssAutoVertical
+  object Panel1: TPanel
+    Left = 0
+    Height = 447
+    Top = 0
+    Width = 445
+    Align = alClient
+    Caption = 'Panel1'
+    ClientHeight = 447
+    ClientWidth = 445
     TabOrder = 0
-  end
-  object button_close: TButton
-    AnchorSideLeft.Control = Owner
-    AnchorSideLeft.Side = asrCenter
-    AnchorSideRight.Control = Owner
-    AnchorSideRight.Side = asrCenter
-    AnchorSideBottom.Control = Owner
-    AnchorSideBottom.Side = asrBottom
-    Left = 202
-    Height = 27
-    Top = 366
-    Width = 41
-    Anchors = [akLeft, akBottom]
-    AutoSize = True
-    BorderSpacing.Bottom = 8
-    Caption = 'Close'
-    OnClick = button_closeClick
-    TabOrder = 1
+    object memo_src: TMemo
+      AnchorSideLeft.Control = Owner
+      AnchorSideTop.Control = Owner
+      AnchorSideRight.Control = Panel1
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = button_close
+      Left = 8
+      Height = 395
+      Top = 8
+      Width = 428
+      Anchors = [akTop, akLeft, akRight, akBottom]
+      BorderSpacing.Around = 8
+      Lines.Strings = (
+        'memo_src'
+      )
+      ScrollBars = ssAutoVertical
+      TabOrder = 0
+    end
+    object button_close: TButton
+      AnchorSideLeft.Control = Owner
+      AnchorSideLeft.Side = asrCenter
+      AnchorSideRight.Control = Panel1
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = Panel1
+      AnchorSideBottom.Side = asrBottom
+      Left = 395
+      Height = 27
+      Top = 411
+      Width = 41
+      Anchors = [akRight, akBottom]
+      AutoSize = True
+      BorderSpacing.Right = 8
+      BorderSpacing.Bottom = 8
+      Caption = 'Close'
+      OnClick = button_closeClick
+      TabOrder = 1
+    end
   end
 end

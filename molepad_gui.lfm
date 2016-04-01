@@ -1,7 +1,7 @@
 object mp_main: Tmp_main
-  Left = 640
+  Left = 711
   Height = 385
-  Top = 76
+  Top = 260
   Width = 389
   BorderStyle = bsSizeToolWin
   Caption = 'MolePad'
@@ -28,9 +28,9 @@ object mp_main: Tmp_main
     Height = 341
     Top = 0
     Width = 389
-    ActivePage = tab_key
+    ActivePage = tab_cipher
     Anchors = [akTop, akLeft, akRight, akBottom]
-    TabIndex = 0
+    TabIndex = 1
     TabOrder = 1
     object tab_key: TTabSheet
       Caption = 'Key and encoding'
@@ -191,13 +191,12 @@ object mp_main: Tmp_main
       ClientHeight = 308
       ClientWidth = 383
       object cipher_main_container: TPanel
-        Left = 8
-        Height = 257
-        Top = 8
-        Width = 367
+        Left = 0
+        Height = 273
+        Top = 0
+        Width = 383
         Align = alClient
         AutoSize = True
-        BorderSpacing.Around = 8
         BevelOuter = bvNone
         ChildSizing.HorizontalSpacing = 8
         ChildSizing.VerticalSpacing = 8
@@ -206,15 +205,16 @@ object mp_main: Tmp_main
         ChildSizing.ShrinkVertical = crsScaleChilds
         ChildSizing.Layout = cclLeftToRightThenTopToBottom
         ChildSizing.ControlsPerLine = 1
-        ClientHeight = 257
-        ClientWidth = 367
+        ClientHeight = 273
+        ClientWidth = 383
         ParentColor = False
         TabOrder = 0
         object memo_input_text: TMemo
-          Left = 0
-          Height = 100
-          Top = 0
+          Left = 8
+          Height = 104
+          Top = 8
           Width = 367
+          BorderSpacing.Around = 8
           Font.Pitch = fpFixed
           Lines.Strings = (
             ''
@@ -225,17 +225,17 @@ object mp_main: Tmp_main
           TabOrder = 0
         end
         object tabs_result: TPageControl
-          Left = 0
-          Height = 149
-          Top = 108
+          Left = 8
+          Height = 153
+          Top = 120
           Width = 367
           ActivePage = tab_result_final
           TabIndex = 0
           TabOrder = 1
           object tab_result_final: TTabSheet
             Caption = 'Result'
-            ClientHeight = 145
-            ClientWidth = 363
+            ClientHeight = 120
+            ClientWidth = 361
             object memo_final_result: TMemo
               AnchorSideLeft.Control = tab_result_final
               AnchorSideTop.Control = tab_result_final
@@ -244,7 +244,7 @@ object mp_main: Tmp_main
               AnchorSideBottom.Control = tab_result_final
               AnchorSideBottom.Side = asrBottom
               Left = 8
-              Height = 100
+              Height = 104
               Top = 8
               Width = 345
               Anchors = [akTop, akLeft, akRight, akBottom]
@@ -262,8 +262,8 @@ object mp_main: Tmp_main
           end
           object tab_result_encoded: TTabSheet
             Caption = 'Encoded'
-            ClientHeight = 145
-            ClientWidth = 363
+            ClientHeight = 120
+            ClientWidth = 361
             object memo_encoded_text: TMemo
               AnchorSideLeft.Control = tab_result_encoded
               AnchorSideRight.Control = tab_result_encoded
@@ -291,35 +291,35 @@ object mp_main: Tmp_main
         end
       end
       object cipher_buttons_container: TPanel
-        Left = 8
-        Height = 27
+        Left = 0
+        Height = 35
         Top = 273
-        Width = 367
+        Width = 383
         Align = alBottom
         AutoSize = True
-        BorderSpacing.Around = 8
         BevelOuter = bvNone
         ChildSizing.EnlargeHorizontal = crsHomogenousSpaceResize
         ChildSizing.ShrinkHorizontal = crsHomogenousSpaceResize
         ChildSizing.ShrinkVertical = crsHomogenousSpaceResize
         ChildSizing.Layout = cclLeftToRightThenTopToBottom
         ChildSizing.ControlsPerLine = 2
-        ClientHeight = 27
-        ClientWidth = 367
+        ClientHeight = 35
+        ClientWidth = 383
         ParentColor = False
         TabOrder = 1
         object button_encipher: TButton
-          Left = 30
+          Left = 37
           Height = 27
-          Top = 0
+          Top = 4
           Width = 139
           Action = EncodeAndEncipher
+          BorderSpacing.Around = 4
           TabOrder = 0
         end
         object button_decipher: TButton
-          Left = 199
+          Left = 213
           Height = 27
-          Top = 0
+          Top = 4
           Width = 139
           Action = DecipherAndDecode
           TabOrder = 1

@@ -5,7 +5,8 @@ unit viewsource;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls;
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
+  ExtCtrls;
 
 type
 
@@ -14,6 +15,7 @@ type
   Tview_source = class(TForm)
     button_close: TButton;
     memo_src: TMemo;
+    Panel1: TPanel;
     procedure button_closeClick(Sender: TObject);
   private
     { private declarations }
