@@ -26,8 +26,8 @@ type
 
     procedure CreateFromStrings(strs: TStringList);
     procedure CreateFromFile(filename: string);
-    function Encode(itxt: ansistring): ansistring;// virtual;
-    function Decode(txt: ansistring): ansistring;// virtual;
+    function Encode(itxt: ansistring): ansistring; virtual;// virtual;
+    function Decode(txt: ansistring): ansistring; virtual;// virtual;
     constructor Init();
     destructor Destroy();
 
