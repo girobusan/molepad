@@ -18,7 +18,7 @@ For better understanding of subject I'd recommend Dirk Rijmenants site: http://u
 Features
 --------
 
-1. Many encoding tables included, plus ability to load custom one from file
+1. Many encoding tables included, plus ability to load custom one from file, and even completely omit encoding stage (if you prefer to encode/decode by hand).
 1. View code table source 
 2. Shows intermediate result of encryption/decryption process
 3. Pen-and-pencil friendly algorithm, tested and approved by generations of spies
