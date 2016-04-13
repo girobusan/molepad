@@ -224,6 +224,7 @@ end;
 procedure Tmp_main.FormCreate(Sender: TObject);
 var
   I: integer;
+  ET: TNullCode;
   {$IFDEF UNIX}
   MI: TMenuItem;
   {$ENDIF}
@@ -255,7 +256,7 @@ begin
   else
     cb_encipher_by_substraction.Checked := True;
   //load tables from resources
-  SetLength(Tables, length(rTables));
+  SetLength(Tables, length(rTables)+1);
   for x := 0 to Length(rTables) - 1 do
   begin
     trs := TResourceStream.Create(HInstance, rTables[x], RT_RCDATA);
@@ -263,6 +264,8 @@ begin
     tsl.LoadFromStream(trs);
     tables[x].CreateFromStrings(tsl);
   end;
+  ET.Init();
+  Tables[length(Tables)-1] := ET;
   tsl.Free;
   trs.Free;
   //populate drop-down menu

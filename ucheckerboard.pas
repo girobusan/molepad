@@ -41,6 +41,7 @@ type
   end;
 
   TNullCode = object(TCodeTable)
+    constructor Init();
     function Encode(itxt: ansistring): ansistring; virtual;
     function Decode(txt: ansistring): ansistring; virtual;
   end;
@@ -372,9 +373,16 @@ begin
   Decode := rz;
 end;
 
+constructor TNullCode.Init();
+begin
+  Title := 'No ecoding' ;
+  Description := 'Choose this, if you prefer to encode or decode by hand.' ;
+
+end;
+
 function TNullCode.Encode(itxt: ansistring): ansistring;
 begin
-  Encode := itxt;
+  Encode := extractNums(itxt);
 end;
 
 

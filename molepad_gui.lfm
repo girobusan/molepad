@@ -1,19 +1,19 @@
 object mp_main: Tmp_main
-  Left = 579
+  Left = 220
   Height = 385
-  Top = 274
+  Top = 231
   Width = 381
   BorderStyle = bsSizeToolWin
   Caption = 'MolePad'
-  ClientHeight = 385
+  ClientHeight = 365
   ClientWidth = 381
   Menu = MainMenu1
   OnCreate = FormCreate
   LCLVersion = '1.6.0.4'
   object StatusBar: TStatusBar
     Left = 0
-    Height = 15
-    Top = 370
+    Height = 23
+    Top = 342
     Width = 381
     Font.Color = clMenuText
     Panels = <    
@@ -32,7 +32,7 @@ object mp_main: Tmp_main
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = StatusBar
     Left = 0
-    Height = 370
+    Height = 342
     Top = 0
     Width = 381
     ActivePage = tab_key
@@ -47,29 +47,29 @@ object mp_main: Tmp_main
       ChildSizing.ShrinkVertical = crsScaleChilds
       ChildSizing.Layout = cclLeftToRightThenTopToBottom
       ChildSizing.ControlsPerLine = 1
-      ClientHeight = 331
-      ClientWidth = 375
+      ClientHeight = 314
+      ClientWidth = 373
       object panel_key_top: TPanel
         AnchorSideLeft.Control = tab_key
         AnchorSideRight.Control = tab_key
         AnchorSideRight.Side = asrBottom
         AnchorSideBottom.Control = panel_key_bottom
         Left = 0
-        Height = 222
+        Height = 206
         Top = 0
-        Width = 375
+        Width = 373
         Anchors = [akTop, akLeft, akRight, akBottom]
         AutoSize = True
         BevelOuter = bvNone
-        ClientHeight = 222
-        ClientWidth = 375
+        ClientHeight = 206
+        ClientWidth = 373
         ParentColor = False
         TabOrder = 0
         object label_key: TLabel
           Left = 8
-          Height = 16
+          Height = 15
           Top = 8
-          Width = 96
+          Width = 80
           BorderSpacing.Around = 8
           Caption = 'One-time key:'
           Font.Style = [fsBold]
@@ -85,9 +85,9 @@ object mp_main: Tmp_main
           AnchorSideBottom.Control = panel_key_top
           AnchorSideBottom.Side = asrBottom
           Left = 8
-          Height = 181
-          Top = 32
-          Width = 359
+          Height = 166
+          Top = 31
+          Width = 357
           Anchors = [akTop, akLeft, akRight, akBottom]
           BorderSpacing.Bottom = 1
           BorderSpacing.Around = 8
@@ -105,10 +105,10 @@ object mp_main: Tmp_main
           AnchorSideTop.Control = panel_key_top
           AnchorSideRight.Control = panel_key_top
           AnchorSideRight.Side = asrBottom
-          Left = 193
-          Height = 18
+          Left = 215
+          Height = 19
           Top = 4
-          Width = 174
+          Width = 150
           Anchors = [akTop, akRight]
           BorderSpacing.Top = 4
           BorderSpacing.Right = 8
@@ -119,22 +119,22 @@ object mp_main: Tmp_main
       end
       object panel_key_bottom: TPanel
         Left = 0
-        Height = 109
-        Top = 222
-        Width = 375
+        Height = 108
+        Top = 206
+        Width = 373
         Align = alBottom
         AutoSize = True
         BevelOuter = bvNone
-        ClientHeight = 109
-        ClientWidth = 375
+        ClientHeight = 108
+        ClientWidth = 373
         ParentColor = False
         TabOrder = 1
         object label_codetable: TLabel
           AnchorSideBottom.Control = codetable_chooser
           Left = 8
-          Height = 16
+          Height = 15
           Top = 8
-          Width = 279
+          Width = 231
           Anchors = [akLeft, akBottom]
           BorderSpacing.Around = 8
           Caption = 'Encoding table (staggered checkerboard):'
@@ -150,13 +150,13 @@ object mp_main: Tmp_main
           AnchorSideRight.Side = asrBottom
           AnchorSideBottom.Control = codetable_description
           Left = 8
-          Height = 21
-          Top = 32
-          Width = 359
+          Height = 23
+          Top = 31
+          Width = 357
           Anchors = [akLeft, akRight, akBottom]
           BorderSpacing.Left = 8
           BorderSpacing.Right = 8
-          ItemHeight = 0
+          ItemHeight = 15
           Items.Strings = (
             'Table-1'
             'Table-2'
@@ -173,9 +173,9 @@ object mp_main: Tmp_main
           AnchorSideBottom.Control = panel_key_bottom
           AnchorSideBottom.Side = asrBottom
           Left = 13
-          Height = 32
-          Top = 61
-          Width = 327
+          Height = 30
+          Top = 62
+          Width = 325
           Anchors = [akLeft, akRight, akBottom]
           BorderSpacing.Left = 13
           BorderSpacing.Top = 8
