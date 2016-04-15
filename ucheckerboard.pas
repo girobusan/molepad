@@ -380,13 +380,13 @@ begin
 
 end;
 
-function TNullCode.Encode(itxt: ansistring): ansistring;
+function TNullCode.Encode(itxt: ansistring): ansistring; // virtual;
 begin
   Encode := extractNums(itxt);
 end;
 
 
-function TNullCode.Decode(txt: ansistring): ansistring;
+function TNullCode.Decode(txt: ansistring): ansistring;// virtual;
 begin
   Decode := txt;
 end;

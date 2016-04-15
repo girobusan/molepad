@@ -261,7 +261,9 @@ begin
   begin
     trs := TResourceStream.Create(HInstance, rTables[x], RT_RCDATA);
     tsl := TStringList.Create;
+    //tsl.Init;
     tsl.LoadFromStream(trs);
+    tables[x].Init;
     tables[x].CreateFromStrings(tsl);
   end;
   ET.Init();
@@ -325,6 +327,7 @@ begin
     Exit;
   end;
   //encode
+  ShowMessage( curTable^.Title );
   encoded := curTable^.Encode(input);
   mp_main.memo_encoded_text.Lines.Text := SpyGrouping(encoded);
   //encrypt
