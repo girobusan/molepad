@@ -23,6 +23,7 @@
     <VersionInfo>
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
+      <MinorVersionNr Value="2"/>
       <Attributes pvaPreRelease="True"/>
       <StringTable CompanyName="girobusan" InternalName="molepad" ProductVersion="0.1b"/>
     </VersionInfo>

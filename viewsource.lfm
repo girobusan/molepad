@@ -1,7 +1,7 @@
 object view_source: Tview_source
-  Left = 1153
+  Left = 837
   Height = 447
-  Top = 489
+  Top = 335
   Width = 445
   Caption = 'View current table source'
   ClientHeight = 447
@@ -14,22 +14,19 @@ object view_source: Tview_source
     Top = 0
     Width = 445
     Align = alClient
-    Caption = 'Panel1'
     ClientHeight = 447
     ClientWidth = 445
-    Color = clBackground
-    ParentColor = False
     TabOrder = 0
     object memo_src: TMemo
-      AnchorSideLeft.Control = Owner
-      AnchorSideTop.Control = Owner
+      AnchorSideLeft.Control = Panel1
+      AnchorSideTop.Control = Panel1
       AnchorSideRight.Control = Panel1
       AnchorSideRight.Side = asrBottom
       AnchorSideBottom.Control = button_close
-      Left = 8
-      Height = 402
-      Top = 8
-      Width = 428
+      Left = 9
+      Height = 394
+      Top = 9
+      Width = 427
       Anchors = [akTop, akLeft, akRight, akBottom]
       BorderSpacing.Around = 8
       Lines.Strings = (
@@ -46,10 +43,10 @@ object view_source: Tview_source
       AnchorSideRight.Side = asrBottom
       AnchorSideBottom.Control = Panel1
       AnchorSideBottom.Side = asrBottom
-      Left = 366
-      Height = 20
-      Top = 418
-      Width = 70
+      Left = 395
+      Height = 27
+      Top = 411
+      Width = 41
       Anchors = [akRight, akBottom]
       AutoSize = True
       BorderSpacing.Right = 8

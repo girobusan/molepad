@@ -136,11 +136,11 @@ msgid "Key and encoding"
 msgstr ""
 
 #: tmp_main.tab_result_encoded.caption
-msgid "Encoded"
+msgid "Encoded:"
 msgstr ""
 
 #: tmp_main.tab_result_final.caption
-msgid "Result"
+msgid "Result:"
 msgstr ""
 
 #: tmp_main.viewsrc.caption
@@ -179,10 +179,6 @@ msgstr ""
 
 #: tview_source.caption
 msgid "View current table source"
-msgstr ""
-
-#: tview_source.panel1.caption
-msgid "Panel1"
 msgstr ""
 
 #: ufpadgen.sscantmakepad
