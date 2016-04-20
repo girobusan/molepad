@@ -35,8 +35,10 @@ type
 
   Tmp_main = class(TForm)
     generatePad: TAction;
+    lable_input: TLabel;
     menu_help_about: TMenuItem;
     menu_help: TMenuItem;
+    Panel1: TPanel;
     viewSrc: TAction;
     DecipherAndDecode: TAction;
     EncodeAndEncipher: TAction;
@@ -327,7 +329,7 @@ begin
     Exit;
   end;
   //encode
-  ShowMessage( curTable^.Title );
+  //ShowMessage( curTable^.Title );
   encoded := curTable^.Encode(input);
   mp_main.memo_encoded_text.Lines.Text := SpyGrouping(encoded);
   //encrypt

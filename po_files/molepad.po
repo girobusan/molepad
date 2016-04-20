@@ -89,6 +89,11 @@ msgstr ""
 msgid "One-time key:"
 msgstr ""
 
+#: tmp_main.lable_input.caption
+msgctxt "TMP_MAIN.LABLE_INPUT.CAPTION"
+msgid "Input:"
+msgstr ""
+
 #: tmp_main.loadtable.caption
 msgid "Load table from file"
 msgstr ""
