@@ -168,10 +168,6 @@ msgstr ""
 msgid "Generate and save"
 msgstr ""
 
-#: tpad_gen.padgen_label.caption
-msgid "One-time pad generator"
-msgstr ""
-
 #: tpad_gen.padgen_second_label.caption
 msgid "At this time, it's buggy and can freeze your computer for a while."
 msgstr ""

@@ -1,47 +1,30 @@
 object pad_gen: Tpad_gen
-  Left = 300
+  Left = 678
   Height = 240
-  Top = 181
+  Top = 188
   Width = 320
   AutoSize = True
   Caption = 'OTP generator'
   ClientHeight = 240
   ClientWidth = 320
   LCLVersion = '1.6.0.4'
-  object padgen_label: TLabel
+  object padgen_second_label: TLabel
     AnchorSideLeft.Control = Owner
     AnchorSideTop.Control = Owner
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
     Left = 15
-    Height = 23
+    Height = 30
     Top = 15
     Width = 290
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Left = 15
     BorderSpacing.Top = 15
     BorderSpacing.Right = 15
-    Caption = 'One-time pad generator'
-    Font.Height = -19
-    ParentColor = False
-    ParentFont = False
-  end
-  object padgen_second_label: TLabel
-    AnchorSideLeft.Control = Owner
-    AnchorSideTop.Control = padgen_label
-    AnchorSideTop.Side = asrBottom
-    AnchorSideRight.Control = Owner
-    AnchorSideRight.Side = asrBottom
-    Left = 15
-    Height = 30
-    Top = 38
-    Width = 290
-    Anchors = [akTop, akLeft, akRight]
-    BorderSpacing.Left = 15
-    BorderSpacing.Right = 15
     Caption = 'At this time, it''s buggy and can freeze your computer for a while.'
     ParentColor = False
     WordWrap = True
+    OnClick = padgen_second_labelClick
   end
   object padgen_generate: TButton
     AnchorSideLeft.Control = Owner
@@ -53,7 +36,7 @@ object pad_gen: Tpad_gen
     AnchorSideBottom.Control = Owner
     Left = 182
     Height = 27
-    Top = 156
+    Top = 133
     Width = 123
     Anchors = [akTop, akRight]
     AutoSize = True
@@ -72,7 +55,7 @@ object pad_gen: Tpad_gen
     AnchorSideRight.Side = asrBottom
     Left = 15
     Height = 27
-    Top = 88
+    Top = 65
     Width = 290
     Anchors = [akTop, akLeft, akRight]
     AutoSize = True
@@ -119,7 +102,7 @@ object pad_gen: Tpad_gen
     AnchorSideRight.Side = asrBottom
     Left = 15
     Height = 27
-    Top = 121
+    Top = 98
     Width = 290
     Anchors = [akTop, akLeft, akRight]
     AutoSize = True
@@ -167,7 +150,7 @@ object pad_gen: Tpad_gen
     AnchorSideBottom.Side = asrBottom
     Left = 133
     Height = 27
-    Top = 156
+    Top = 133
     Width = 41
     Anchors = [akRight, akBottom]
     AutoSize = True

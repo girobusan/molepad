@@ -19,7 +19,6 @@ type
     padgen_generate: TButton;
     label_pages: TLabel;
     lines_label: TLabel;
-    padgen_label: TLabel;
     pad_save: TSaveDialog;
     num_pages: TSpinEdit;
     num_lines: TSpinEdit;
@@ -28,6 +27,7 @@ type
 
     procedure padgenCloseClick(Sender: TObject);
     procedure padgen_generateClick(Sender: TObject);
+    procedure padgen_second_labelClick(Sender: TObject);
   private
     { private declarations }
   public
@@ -81,6 +81,11 @@ begin
   end
   else
     ShowMessage(ssFileOops);
+end;
+
+procedure Tpad_gen.padgen_second_labelClick(Sender: TObject);
+begin
+
 end;
 
 

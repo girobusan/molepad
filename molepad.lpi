@@ -26,7 +26,6 @@
       <Attributes pvaPreRelease="True"/>
       <StringTable CompanyName="girobusan" InternalName="molepad" ProductVersion="0.1b"/>
     </VersionInfo>
-    <MacroValues Count="1"/>
     <BuildModes Count="1">
       <Item1 Name="Default" Default="True"/>
     </BuildModes>
