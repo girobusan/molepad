@@ -1,7 +1,7 @@
 object mp_main: Tmp_main
-  Left = 486
+  Left = 485
   Height = 640
-  Top = 211
+  Top = 191
   Width = 527
   BorderStyle = bsSizeToolWin
   Caption = 'MolePad'
@@ -55,23 +55,25 @@ object mp_main: Tmp_main
         AnchorSideRight.Side = asrBottom
         AnchorSideBottom.Control = panel_key_bottom
         Left = 0
-        Height = 451
+        Height = 449
         Top = 0
         Width = 521
         Anchors = [akTop, akLeft, akRight, akBottom]
         AutoSize = True
         BevelOuter = bvNone
-        ClientHeight = 451
+        ClientHeight = 449
         ClientWidth = 521
         ParentColor = False
         TabOrder = 0
         object label_key: TLabel
           Left = 8
-          Height = 15
+          Height = 17
           Top = 8
-          Width = 96
+          Width = 103
           BorderSpacing.Around = 8
           Caption = 'One-time key:'
+          Font.Height = -13
+          Font.Name = 'Sans'
           Font.Style = [fsBold]
           ParentColor = False
           ParentFont = False
@@ -85,8 +87,8 @@ object mp_main: Tmp_main
           AnchorSideBottom.Control = panel_key_top
           AnchorSideBottom.Side = asrBottom
           Left = 8
-          Height = 411
-          Top = 31
+          Height = 407
+          Top = 33
           Width = 505
           Anchors = [akTop, akLeft, akRight, akBottom]
           BorderSpacing.Bottom = 1
@@ -105,10 +107,10 @@ object mp_main: Tmp_main
           AnchorSideTop.Control = panel_key_top
           AnchorSideRight.Control = panel_key_top
           AnchorSideRight.Side = asrBottom
-          Left = 337
+          Left = 333
           Height = 22
           Top = 4
-          Width = 176
+          Width = 180
           Anchors = [akTop, akRight]
           BorderSpacing.Top = 4
           BorderSpacing.Right = 8
@@ -119,25 +121,27 @@ object mp_main: Tmp_main
       end
       object panel_key_bottom: TPanel
         Left = 0
-        Height = 112
-        Top = 451
+        Height = 114
+        Top = 449
         Width = 521
         Align = alBottom
         AutoSize = True
         BevelOuter = bvNone
-        ClientHeight = 112
+        ClientHeight = 114
         ClientWidth = 521
         ParentColor = False
         TabOrder = 1
         object label_codetable: TLabel
           AnchorSideBottom.Control = codetable_chooser
           Left = 8
-          Height = 15
+          Height = 17
           Top = 8
-          Width = 288
+          Width = 317
           Anchors = [akLeft, akBottom]
           BorderSpacing.Around = 8
           Caption = 'Encoding table (staggered checkerboard):'
+          Font.Height = -13
+          Font.Name = 'Sans'
           Font.Style = [fsBold]
           ParentColor = False
           ParentFont = False
@@ -151,7 +155,7 @@ object mp_main: Tmp_main
           AnchorSideBottom.Control = codetable_description
           Left = 8
           Height = 27
-          Top = 31
+          Top = 33
           Width = 505
           Anchors = [akLeft, akRight, akBottom]
           BorderSpacing.Left = 8
@@ -174,7 +178,7 @@ object mp_main: Tmp_main
           AnchorSideBottom.Side = asrBottom
           Left = 13
           Height = 30
-          Top = 66
+          Top = 68
           Width = 473
           Anchors = [akLeft, akRight, akBottom]
           BorderSpacing.Left = 13
@@ -355,19 +359,19 @@ object mp_main: Tmp_main
           ClientWidth = 521
           TabOrder = 1
           object button_encipher: TButton
-            Left = 83
+            Left = 79
             Height = 27
             Top = 4
-            Width = 139
+            Width = 144
             Action = EncodeAndEncipher
             BorderSpacing.Around = 4
             TabOrder = 0
           end
           object button_decipher: TButton
-            Left = 305
+            Left = 302
             Height = 27
             Top = 4
-            Width = 139
+            Width = 145
             Action = DecipherAndDecode
             TabOrder = 1
           end
