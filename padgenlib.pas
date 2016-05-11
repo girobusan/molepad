@@ -5,7 +5,7 @@ unit padgenlib;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs;
+  SysUtils, FileUtil;
 
 type
   T5bytes = array of byte;

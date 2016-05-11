@@ -1,7 +1,7 @@
 object mp_main: Tmp_main
-  Left = 485
+  Left = 484
   Height = 640
-  Top = 191
+  Top = 171
   Width = 527
   BorderStyle = bsSizeToolWin
   Caption = 'MolePad'
@@ -278,8 +278,8 @@ object mp_main: Tmp_main
             TabOrder = 1
             object tab_result_final: TTabSheet
               Caption = 'Result:'
-              ClientHeight = 236
-              ClientWidth = 499
+              ClientHeight = 267
+              ClientWidth = 501
               Font.Height = -13
               Font.Name = 'Sans'
               Font.Style = [fsBold]
@@ -311,8 +311,8 @@ object mp_main: Tmp_main
             end
             object tab_result_encoded: TTabSheet
               Caption = 'Encoded:'
-              ClientHeight = 236
-              ClientWidth = 499
+              ClientHeight = 267
+              ClientWidth = 501
               OnHide = tab_result_encodedHide
               OnShow = tab_result_encodedShow
               object memo_encoded_text: TMemo

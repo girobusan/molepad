@@ -333,8 +333,14 @@ begin
   encoded := curTable^.Encode(input);
   mp_main.memo_encoded_text.Lines.Text := SpyGrouping(encoded);
   //encrypt
+  try
   mp_main.memo_final_result.Lines.Text :=
     indicator + ' ' + SpyGrouping(Cipher(encoded, otkey, True));
+  except
+    On E:CipherException do ShowMessage(E.message);
+  end;
+  //finally
+  //end;
 end;
 
 //decrypt

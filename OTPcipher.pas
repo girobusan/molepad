@@ -5,7 +5,11 @@ unit OTPcipher;
 interface
 
 uses
-  Dialogs, SysUtils, uspybeauty;
+
+  SysUtils, uspybeauty;
+
+type
+  CipherException  = class(Exception);
 
 procedure changeEncType();
 function isEncByAddition(): boolean;
@@ -16,6 +20,12 @@ implementation
 
 var
   encipherByAddition: boolean = False;
+
+
+
+resourcestring
+  ssBadKeyLength = 'Unsufficient key length.';
+      ssNonDigit = 'Non-digit symbol in input. Please check.';
 
 procedure changeEncType();
 begin
@@ -56,7 +66,7 @@ begin
   if length(utf8decode(src)) > length(key) then
   begin
     Cipher := '(⊙︿⊙)';
-    ShowMessage('Insufficient key length');
+    raise CipherException.create(ssBadKeyLength);
     exit;
   end;
   for i := 1 to (length(src)) do
@@ -67,8 +77,9 @@ begin
     except
       On E: EConvertError do
       begin
-        ShowMessage('Non-digit symbol in input. Please check.'); //Newer shown,
-        Cipher := '(''o'')';                              //but funny.
+        raise CipherException.create(ssNonDigit);
+        //Newer shown?
+        Cipher := '(''o'')';
         exit;
       end;
 

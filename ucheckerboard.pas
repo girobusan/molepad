@@ -46,6 +46,10 @@ type
     function Decode(txt: ansistring): ansistring; virtual;
   end;
 
+resourcestring
+   ssNoEncodingTitle =       'No ecoding' ;
+   ssNoEncodingDescription = 'Choose this, if you prefer to encode or decode by hand.';
+
 
 
 implementation
@@ -375,8 +379,8 @@ end;
 
 constructor TNullCode.Init();
 begin
-  Title := 'No ecoding' ;
-  Description := 'Choose this, if you prefer to encode or decode by hand.' ;
+  Title := ssNoEncodingTitle ;
+  Description := ssNoEncodingDescription ;
 
 end;
 

@@ -29,6 +29,14 @@ msgstr ""
 msgid "Not implemented yet."
 msgstr ""
 
+#: otpcipher.ssbadkeylength
+msgid "Unsufficient key length."
+msgstr ""
+
+#: otpcipher.ssnondigit
+msgid "Non-digit symbol in input. Please check."
+msgstr ""
+
 #: tfabout.button_close.caption
 msgctxt "TFABOUT.BUTTON_CLOSE.CAPTION"
 msgid "Close"
